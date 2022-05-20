@@ -1,6 +1,5 @@
 $button-color: white;
 $button-bg: cornflowerblue;
-$text-color: black;
 .navbar{
     height: 7vh;
     display: flex;
@@ -15,10 +14,10 @@ $text-color: black;
         &.cta{
             background-color: $button-bg;
             color: $button-color;
-            padding: .5rem .7rem;
+            padding: .5rem .8rem;
             &:hover{
                 border: $button-bg solid 1.5px;
-                background-color: $button-color;
+                background-color: rgba(0, 0, 0, 0);
                 color: $button-bg;
             }
         }
