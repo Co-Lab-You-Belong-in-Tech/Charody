@@ -1,0 +1,40 @@
+.navbar {
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .navLink {
+  margin-right: 1rem;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.navbar .navLink.cta {
+  background-color: cornflowerblue;
+  color: white;
+  padding: .5rem .8rem;
+}
+
+.navbar .navLink.cta:hover {
+  border: cornflowerblue solid 1.5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: cornflowerblue;
+}
+
+.navbar .navLink:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=navbar.css.map */
