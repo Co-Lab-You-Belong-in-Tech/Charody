@@ -1,0 +1,47 @@
+.imgTextBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.imgTextBlock > * {
+  margin: 7vh 10vw;
+}
+
+.imgTextBlock div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.imgTextBlock div > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.imgTextBlock div img {
+  max-width: 40vw;
+}
+
+.imgTextBlock div ul {
+  list-style: none;
+  font-size: 1.25rem;
+}
+
+.imgTextBlock div ul > * {
+  margin-bottom: .5rem;
+}
+/*# sourceMappingURL=imgTextBlock.css.map */
