@@ -23,15 +23,27 @@
 }
 
 .navbar .navLink.cta {
+  border: solid rgba(0, 0, 0, 0) 1.5px;
   background-color: cornflowerblue;
   color: white;
   padding: .5rem .8rem;
 }
 
 .navbar .navLink.cta:hover {
-  border: cornflowerblue solid 1.5px;
+  border-color: cornflowerblue;
   background-color: rgba(0, 0, 0, 0);
   color: cornflowerblue;
+}
+
+.navbar .navLink.cta.invert {
+  border-color: cornflowerblue;
+  background-color: white;
+  color: cornflowerblue;
+}
+
+.navbar .navLink.cta.invert:hover {
+  background-color: cornflowerblue;
+  color: white;
 }
 
 .navbar .navLink:hover {

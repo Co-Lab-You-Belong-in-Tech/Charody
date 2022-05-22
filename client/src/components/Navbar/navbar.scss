@@ -12,13 +12,23 @@ $button-bg: cornflowerblue;
         text-decoration: none;
         transition: 200ms;
         &.cta{
+            border: solid rgba(0, 0, 0, 0) 1.5px;
             background-color: $button-bg;
             color: $button-color;
             padding: .5rem .8rem;
             &:hover{
-                border: $button-bg solid 1.5px;
+                border-color: $button-bg;
                 background-color: rgba(0, 0, 0, 0);
                 color: $button-bg;
+            }
+            &.invert{
+                border-color: $button-bg;
+                background-color: $button-color;
+                color: $button-bg;
+                &:hover{
+                    background-color: $button-bg;
+                    color: $button-color;
+                }
             }
         }
         &:hover{

@@ -9,7 +9,7 @@ export default function Navbar() {
             </div>
             <div>
                 <NavLink className='navLink' to='/AboutUs'>About Us</NavLink>
-                <NavLink className='navLink' to='/'>Login</NavLink>
+                <NavLink className='navLink cta invert' to='/'>Login</NavLink>
                 <NavLink className='navLink cta' to='/'>Sign Up</NavLink>
             </div>
         </div>
