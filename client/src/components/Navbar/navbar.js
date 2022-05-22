@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 
 import './navbar.css'
+import '../components.css'
 export default function Navbar() {
     return(
         <div className='navbar'>
@@ -9,8 +10,8 @@ export default function Navbar() {
             </div>
             <div>
                 <NavLink className='navLink' to='/AboutUs'>About Us</NavLink>
-                <NavLink className='navLink cta invert' to='/'>Login</NavLink>
-                <NavLink className='navLink cta' to='/'>Sign Up</NavLink>
+                <NavLink className='navLink buttonColored invert' to='/'>Login</NavLink>
+                <NavLink className='navLink buttonColored' to='/'>Sign Up</NavLink>
             </div>
         </div>
     )
