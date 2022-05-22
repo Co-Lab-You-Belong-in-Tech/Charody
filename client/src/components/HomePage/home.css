@@ -7,9 +7,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .hero div {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,21 +34,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.hero .link {
-  text-decoration: none;
-  background-color: cornflowerblue;
   color: white;
-  padding: .5rem .8rem;
-  -webkit-transition: 200ms;
-  transition: 200ms;
 }
 
-.hero .link:hover {
-  border: cornflowerblue solid 1.5px;
-  background-color: rgba(0, 0, 0, 0);
-  color: cornflowerblue;
+.hero div h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .howItWorks > * {
@@ -58,33 +66,5 @@
 
 .howItWorks .cards > * {
   max-width: 20vw;
-}
-
-.benefits > * {
-  margin: 7vh 10vw;
-}
-
-.benefits ul {
-  list-style: none;
-  margin-right: 5vw;
-}
-
-.benefits ul li {
-  margin-bottom: 1rem;
-}
-
-.benefits div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 /*# sourceMappingURL=home.css.map */

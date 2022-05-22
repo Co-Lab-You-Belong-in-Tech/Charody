@@ -1,42 +1,93 @@
+// component imports
 import { Link } from 'react-router-dom'
 import Card from '../Card/card'
+import ImgTextBlock from '../ImgTextBlock/imgTextBlock'
 import './home.css'
+import '../components.css'
+// image imports
+import heroSection from '../../static/images/Hero section.jpeg'
+import step1 from '../../static/images/Step 1 fill info.png'
+import step2 from '../../static/images/Step 2 contact.png'
+import step3 from '../../static/images/Step 3 host.png'
+
+import impactYouMake from '../../static/images/Dog mom.jpg'
+import volunteer from '../../static/images/Volunteer.png'
 export default function Home() {
     return(
         <div>
             <div className='hero'>
+                <img src={heroSection}></img>
                 <div>
-                    <p>Velit cillum proident ipsum elit ex in ex cupidatat quis ea reprehenderit aliqua. Consequat incididunt cillum dolor do velit ullamco incididunt aliqua ipsum. In elit ea anim minim consectetur ad ipsum in sint ullamco. Reprehenderit exercitation nulla id voluptate adipisicing aute anim dolore id quis mollit aliquip. Amet minim laboris aute et eu aliquip nostrud officia. Ut ullamco aute in labore consectetur quis cupidatat eu cupidatat et laborum consequat.</p>
-                    <Link className='link' to='/signUp'>Sign Up</Link>
+                    <h1>Temporary housing<br/>Forever grateful</h1>
+                    <p>Help victims of natural disasters by providing<br/>short term shelter</p>
+                    <Link className='grayButton' to='/signUp'>Sign Up</Link>
                 </div>
             </div>
             <div className='howItWorks'>
                 <h1>How It Works</h1>
                 <div className='cards'>
                     <Card 
-                        img='https://via.placeholder.com/150'
-                        txt='Exercitation cupidatat quis ad dolor elit est dolore pariatur proident adipisicing ea.'
+                        title='Step 1'
+                        img={step1}
+                        txt='Create an account and fill basic personal and housing information.  Only disaster relief officials have access to this.'
                     />
                     <Card 
-                        img='https://via.placeholder.com/150'
-                        txt='Exercitation cupidatat quis ad dolor elit est dolore pariatur proident adipisicing ea.'
+                        title='Step 2'
+                        img={step2}
+                        txt='If a disaster occurs and shelter is needed, our partner organization will geolocate volunteers to contact.'
                     />
                     <Card 
-                        img='https://via.placeholder.com/150'
-                        txt='Exercitation cupidatat quis ad dolor elit est dolore pariatur proident adipisicing ea.'
+                        title='Step 3'
+                        img={step3}
+                        txt='Based on the information the partner organization shares of the victims, you can choose how many to host and for how long but not longer than 30 days.'
                     />
                 </div>
             </div>
-            <div className='benefits'>
-                <h1>Benefits of Volunteering</h1>
-                <div>
-                    <ul>
-                        <li>Magna qui ex deserunt commodo ullamco mollit est amet eiusmod quis elit laborum ex ut. Et aliqua elit dolor est deserunt sunt exercitation Lorem ut amet incididunt est. Do duis quis ut exercitation dolor occaecat in nisi incididunt exercitation velit cillum in occaecat. Est aute ad nulla dolore labore duis.</li>
-                        <li>Magna qui ex deserunt commodo ullamco mollit est amet eiusmod quis elit laborum ex ut. Et aliqua elit dolor est deserunt sunt exercitation Lorem ut amet incididunt est. Do duis quis ut exercitation dolor occaecat in nisi incididunt exercitation velit cillum in occaecat. Est aute ad nulla dolore labore duis.</li>
-                    </ul>
-                    <img src='https://via.placeholder.com/500'></img>
-                </div>
-            </div>
+            <ImgTextBlock
+                title='The impact you make'
+                txt={() => {
+                    return(
+                        <figure>
+                            <p>"It was hard to get shelter to fit my physical needs and where my dog would be accepted.  So many volunteers through Charody offered to help us.  I stayed with one host for a few weeks and another for a month until I was able to find a new home after ours got burned from a wildfire."</p>
+                            <figcaption>-Sarah C.</figcaption>
+                        </figure>
+                    )
+                }}
+                left={true}
+                img={impactYouMake}
+            />
+            <ImgTextBlock
+                title='About your guests'
+                txt={() => {
+                    return(
+                        <ul>
+                            <li>Verified identity and victim of a natural disaster.</li>
+                            <li>Will be assigned and in touch with a caseworker.</li>
+                            <li>Will not get your contact information.</li>
+                            <li>Will stay for the days you’re willing to host.</li>
+                        </ul>
+                    )
+                }}
+                right={true}
+                img={impactYouMake}
+            />
+            <ImgTextBlock
+                title='Why volunteer?'
+                txt={() => {
+                    return(
+                        <div>
+                            <ul>
+                                <li>Help people transition back to their lives.</li>
+                                <li>Build relationships with officials and guests.</li>
+                                <li>Housing insurance during guest stays.</li>
+                            </ul>
+                            <Link className='buttonColored' to='/signUp'>Be a Host</Link>
+                        </div>
+                    )
+                }}
+                left={true}
+                img={volunteer}
+            />
         </div>
     )
 }
