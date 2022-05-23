@@ -1,0 +1,28 @@
+$button-color: white;
+$button-bg: cornflowerblue;
+.navbar{
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .navLink{
+        margin-right: 1rem;
+        color: black;
+        text-decoration: none;
+        transition: 200ms;
+        &.cta{
+            background-color: $button-bg;
+            color: $button-color;
+            padding: .5rem .8rem;
+            &:hover{
+                border: $button-bg solid 1.5px;
+                background-color: rgba(0, 0, 0, 0);
+                color: $button-bg;
+            }
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.hero {
+  background-color: rgba(0, 0, 0, 0.1);
+  min-height: 73vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 50vw 0 20vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .link {
+  text-decoration: none;
+  background-color: cornflowerblue;
+  color: white;
+  padding: .5rem .8rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.hero .link:hover {
+  border: cornflowerblue solid 1.5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: cornflowerblue;
+}
+
+.howItWorks > * {
+  margin: 7vh 0;
+}
+
+.howItWorks .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.howItWorks .cards > * {
+  max-width: 20vw;
+}
+
+.benefits > * {
+  margin: 7vh 10vw;
+}
+
+.benefits ul {
+  list-style: none;
+  margin-right: 5vw;
+}
+
+.benefits ul li {
+  margin-bottom: 1rem;
+}
+
+.benefits div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=home.css.map */

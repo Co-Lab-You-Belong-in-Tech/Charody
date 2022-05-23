@@ -1,0 +1,52 @@
+$button-color: white;
+$button-bg: cornflowerblue;
+.hero{
+    background-color: rgba(0, 0, 0, .1);
+    min-height: 73vh;
+    display: flex;
+    align-items: center;
+    div{
+        display: flex;
+        flex-direction: column;
+        margin: 0 50vw 0 20vw;
+        align-items: center;
+    }
+    .link{
+        text-decoration: none;
+        background-color: $button-bg;
+        color: $button-color;
+        padding: .5rem .8rem;
+        transition: 200ms;
+        &:hover{
+            border: $button-bg solid 1.5px;
+            background-color: rgba(0, 0, 0, 0);
+            color: $button-bg;
+        }
+    }
+}
+.howItWorks{
+    &>*{ margin: 7vh 0; }
+    .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        &>*{
+            max-width: 20vw;
+        }
+    }
+}
+.benefits{
+    &>*{ margin: 7vh 10vw; }
+    ul{
+        list-style: none;
+        margin-right: 5vw;
+        li{ margin-bottom: 1rem; }
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
