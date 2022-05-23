@@ -1,26 +1,25 @@
-import { useState } from 'react'
+import { Route, NavLink } from 'react-router-dom'
+import { useRouteMatch } from 'react-router'
 import './signUp.css'
 import '../components.css'
+// components
+import Homeowner from './Homeowner/homeowner'
+import Official from './Official/official'
+
 export default function SignUp(){
-    const [personnel, setPersonnel] = useState('homeowner')
+    const { url } = useRouteMatch()
+    const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     return(
         <div className='signUp'>
             <img src='https://via.placeholder.com/200x300'></img>
             <form>
-                <div className='radio'>
-                    <input type='radio' id='homeowner' name='signupPersonnelSelect' value='homeowner' selected={personnel} onChange={e=>{
-                        setPersonnel('homeowner')
-                    }}></input>
-                    <label for='homeowner'>Homeowner</label>
-                    <input type='radio' id='official' name='signupPersonnelSelect' value='official' selected={personnel} onChange={e=>{
-                        setPersonnel('official')
-                    }}></input>
-                    <label for='official'>Disaster Official</label>
+                <div className='navLink'>
+                    <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/homeowner`}>Homeowner</NavLink>
+                    <NavLink className='navLink' activeStyle={activeStyle}to={`${url}/official`}>Official</NavLink>
                 </div>
-                <div className='form'>
-                    <input placeholder='Email'></input>
-                    <input placeholder='Password'></input>
-                    <button type='submit' className='buttonColored full'>Create an Account</button>
+                <div>
+                    <Route path={`${url}/homeowner`} component={Homeowner}/>
+                    <Route path={`${url}/official`} component={Official}/>
                 </div>
             </form>
         </div>
