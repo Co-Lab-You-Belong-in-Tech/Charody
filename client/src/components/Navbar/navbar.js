@@ -9,9 +9,9 @@ export default function Navbar() {
                 <NavLink className='navLink' to='/'>Charody</NavLink>
             </div>
             <div>
-                <NavLink className='navLink' to='/AboutUs'>About Us</NavLink>
-                <NavLink className='navLink buttonColored invert' to='/'>Login</NavLink>
-                <NavLink className='navLink buttonColored' to='/'>Sign Up</NavLink>
+                <NavLink className='navLink' to='/aboutUs'>About Us</NavLink>
+                <NavLink className='navLink buttonColored invert' to='/login'>Login</NavLink>
+                <NavLink className='navLink buttonColored' to='/signUp'>Sign Up</NavLink>
             </div>
         </div>
     )
