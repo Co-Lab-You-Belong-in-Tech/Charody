@@ -1,0 +1,36 @@
+.signUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>*{ margin: 1rem 0; }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        background-color: #DDF4FF26;
+        height: 100%;
+        .radio{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            height: 3rem;
+            input[type='radio']{
+                display: none;
+                width: 100%;    
+                &:checked+label{
+                    border-bottom: #26B4F9 solid 2px;
+                }
+            }
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem;
+            height: 100%;
+            &>*{
+                margin-bottom: .5rem;
+                padding: .5rem .7rem;
+            }
+        }
+    }
+}
