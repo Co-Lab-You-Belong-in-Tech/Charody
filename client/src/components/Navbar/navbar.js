@@ -11,7 +11,7 @@ export default function Navbar() {
             <div>
                 <NavLink className='navLink' to='/aboutUs'>About Us</NavLink>
                 <NavLink className='navLink buttonColored invert' to='/login'>Login</NavLink>
-                <NavLink className='navLink buttonColored' to='/signUp'>Sign Up</NavLink>
+                <NavLink className='navLink buttonColored' to='/signUp/homeowner'>Sign Up</NavLink>
             </div>
         </div>
     )

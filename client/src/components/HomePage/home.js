@@ -20,7 +20,7 @@ export default function Home() {
                 <div>
                     <h1>Temporary housing<br/>Forever grateful</h1>
                     <p>Help victims of natural disasters by providing<br/>short term shelter</p>
-                    <Link className='grayButton' to='/signUp'>Sign Up</Link>
+                    <Link className='grayButton' to='/signUp/homeowner'>Sign Up</Link>
                 </div>
             </div>
             <div className='howItWorks'>
@@ -81,7 +81,7 @@ export default function Home() {
                                 <li>Build relationships with officials and guests.</li>
                                 <li>Housing insurance during guest stays.</li>
                             </ul>
-                            <Link className='buttonColored' to='/signUp'>Be a Host</Link>
+                            <Link className='buttonColored' to='/signUp/homeowner'>Be a Host</Link>
                         </div>
                     )
                 }}
