@@ -1,5 +1,5 @@
 $button-color: white;
-$button-bg: cornflowerblue;
+$button-bg: #26B4F9;
 .grayButton{
     text-decoration: none;
     background-color: $button-bg;
@@ -30,5 +30,10 @@ $button-bg: cornflowerblue;
             background-color: $button-bg;
             color: $button-color !important;
         }
+    }
+    &.full:hover{
+        border-color: $button-bg;
+        background-color: $button-color;
+        color: $button-bg !important;
     }
 }
