@@ -1,0 +1,39 @@
+$button-color: white;
+$button-bg: #26B4F9;
+.grayButton{
+    text-decoration: none;
+    background-color: $button-bg;
+    color: $button-color;
+    padding: .5rem .8rem;
+    border: rgba(0, 0, 0, 0) solid 1.5px;
+    transition: 200ms;
+    &:hover{
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
+.buttonColored{
+    border: solid rgba(0, 0, 0, 0) 1.5px;
+    background-color: $button-bg;
+    color: $button-color !important;
+    padding: .5rem .8rem;
+    transition: 200ms;
+    &:hover{
+        border-color: $button-bg;
+        background-color: rgba(0, 0, 0, 0);
+        color: $button-bg !important;
+    }
+    &.invert{
+        border-color: $button-bg;
+        background-color: $button-color;
+        color: $button-bg !important;
+        &:hover{
+            background-color: $button-bg;
+            color: $button-color !important;
+        }
+    }
+    &.full:hover{
+        border-color: $button-bg;
+        background-color: $button-color;
+        color: $button-bg !important;
+    }
+}

@@ -1,0 +1,46 @@
+.grayButton {
+  text-decoration: none;
+  background-color: #26B4F9;
+  color: white;
+  padding: .5rem .8rem;
+  border: rgba(0, 0, 0, 0) solid 1.5px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.grayButton:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.buttonColored {
+  border: solid rgba(0, 0, 0, 0) 1.5px;
+  background-color: #26B4F9;
+  color: white !important;
+  padding: .5rem .8rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.buttonColored:hover {
+  border-color: #26B4F9;
+  background-color: rgba(0, 0, 0, 0);
+  color: #26B4F9 !important;
+}
+
+.buttonColored.invert {
+  border-color: #26B4F9;
+  background-color: white;
+  color: #26B4F9 !important;
+}
+
+.buttonColored.invert:hover {
+  background-color: #26B4F9;
+  color: white !important;
+}
+
+.buttonColored.full:hover {
+  border-color: #26B4F9;
+  background-color: white;
+  color: #26B4F9 !important;
+}
+/*# sourceMappingURL=components.css.map */
