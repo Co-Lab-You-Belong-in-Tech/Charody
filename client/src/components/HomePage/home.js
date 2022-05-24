@@ -11,11 +11,12 @@ import step2 from '../../static/images/Step 2 contact.png'
 import step3 from '../../static/images/Step 3 host.png'
 
 import impactYouMake from '../../static/images/Dog mom.jpg'
+import aboutYourGuest from '../../static/images/guest.png'
 import volunteer from '../../static/images/Volunteer.png'
 export default function Home() {
     return(
         <div>
-            <div className='hero'>
+            <div className='hero overlay'>
                 <img src={heroSection}></img>
                 <div>
                     <h1>Temporary housing<br/>Forever grateful</h1>
@@ -69,7 +70,7 @@ export default function Home() {
                     )
                 }}
                 right={true}
-                img={impactYouMake}
+                img={aboutYourGuest}
             />
             <ImgTextBlock
                 title='Why volunteer?'
