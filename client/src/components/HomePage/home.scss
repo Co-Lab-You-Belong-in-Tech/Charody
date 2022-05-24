@@ -1,20 +1,7 @@
 // sections
 .hero{
-    background-color: rgba(0, 0, 0, .1);
-    min-height: 73vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-align: center;
+    height: 73vh;
     overflow: hidden;
-    img{
-        position: absolute;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
     div{
         position: absolute;
         display: flex;
