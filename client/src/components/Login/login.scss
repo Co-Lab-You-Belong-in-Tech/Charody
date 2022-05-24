@@ -1,0 +1,23 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>*{ margin: 1rem 0; }
+    .loginImage{
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        justify-content: space-around;
+        img{ height: 50vh; }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30vw;
+        &>*{
+            margin-bottom: .5rem;
+            padding: .5rem .7rem;
+        }
+    }
+}
