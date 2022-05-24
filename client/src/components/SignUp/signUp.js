@@ -2,6 +2,8 @@ import { Route, NavLink } from 'react-router-dom'
 import { useRouteMatch } from 'react-router'
 import './signUp.css'
 import '../components.css'
+
+import signUpImg from '../../static/images/Sign up.jpg'
 // components
 import Homeowner from './Homeowner/homeowner'
 import Official from './Official/official'
@@ -11,7 +13,19 @@ export default function SignUp(){
     const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     return(
         <div className='signUp'>
-            <img src='https://via.placeholder.com/200x300'></img>
+            <div className='signUpImg'>
+                <img src={signUpImg}></img>
+                <div>
+                    <p>
+                        Thank you for taking the<br/>
+                        initiative to sign up today.<br/>
+                        Your kindness makes a<br/>
+                        positive difference
+                    </p>
+                </div>
+                
+            </div>
+            
             <form>
                 <div className='navLink'>
                     <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/homeowner`}>Homeowner</NavLink>
