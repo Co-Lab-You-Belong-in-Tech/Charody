@@ -37,3 +37,18 @@ $button-bg: #26B4F9;
         color: $button-bg !important;
     }
 }
+
+// overlay
+.overlay{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    div, img{
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
