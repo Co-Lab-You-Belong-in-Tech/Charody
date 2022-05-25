@@ -52,7 +52,7 @@ export default function Home(props){
             </div>
             <label>
                 <p>How many days can you host?<br/>Minimum 3 days, maximum 30 days</p>
-                <input placeholder='number' onChange={e => setHostDays(e.target.value)}></input>
+                <input placeholder='number' className='daysInput' onChange={e => setHostDays(e.target.value)}></input>
             </label>
             <button type='submit'>Next</button>
         </form>

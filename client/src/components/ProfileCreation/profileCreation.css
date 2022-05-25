@@ -27,6 +27,11 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 2vw;
+  width: 40vw;
+}
+
+.profileCreation > div > div {
+  width: 25vw;
 }
 
 .profileCreation > div .navLink {
@@ -40,9 +45,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-decoration: none;
   color: black;
 }
@@ -51,6 +56,10 @@
   content: '';
   border: solid black 0.5px;
   width: 1rem;
+}
+
+.profileCreation > div .form {
+  margin-top: 1rem;
 }
 
 .profileCreation > div .form form {
@@ -73,10 +82,11 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  width: 20vw;
+  width: 100%;
   font-size: 1rem;
-  padding: .2rem .5rem;
-  margin: .5rem 1rem;
+  padding: .4rem 0;
+  text-align: center;
+  margin: .5rem 0;
 }
 
 .profileCreation > div .form form label {
@@ -115,7 +125,7 @@
 .profileCreation > div .form form button[type=submit] {
   color: white;
   background-color: #26B4F9;
-  border: solid #26B4F9 2px;
+  border: solid #26B4F9 1.5px;
   -webkit-transition: 200ms;
   transition: 200ms;
   padding: .7rem;
