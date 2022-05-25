@@ -28,10 +28,11 @@
     "eol-last": ["error", "always"],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "array-bracket-spacing": "error",
-    "prefer-const": "error",
+    "prefer-const": ["error", { "destructuring": "all"} ],
     "no-var": "error",
     "rest-spread-spacing": "error",
     "prefer-arrow-callback": "error",
-    "object-shorthand": ["error", "always"]
+    "object-shorthand": ["error", "always"],
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
   }
 }

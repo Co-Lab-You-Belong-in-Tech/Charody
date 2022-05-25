@@ -1,16 +1,16 @@
 const Listing = require('./Listing.js');
 
-let client;
-let users;
-
 class User {
-  static async injectDB(conn) {
-    if (users) {
+  client;
+  users;
+
+  static async injectDB(client) {
+    if (this.users) {
       return;
     }
     try {
-      client = await conn.db(process.env.DB_NAMESPACE);
-      users = client.collection('users');
+      this.client = client;
+      this.users = await client.db(process.env.DB_NAMESPACE).collection('users');
     } catch (e) {
       console.error(`Unable to establish collection handles in user: ${e}`);
     }
@@ -22,7 +22,7 @@ class User {
    * @returns {Object | null} Returns either a single user or nothing
    */
   static async getUser(email) {
-    return await users.findOne({ email });
+    return await this.users.findOne({ email });
   }
 
   /**
@@ -32,8 +32,14 @@ class User {
   static async addUser(userInfo) {
     const { email, passwordHash } = userInfo;
     try {
-      const result = await users.insertOne({ email, passwordHash }, { writeConcern: 'majority' });
-      return await users.findOne(
+      
+      const result = await this.users.insertOne({
+        email,
+        passwordHash,
+        isOfficial: false
+      }, { writeConcern: 'majority' });
+
+      return await this.users.findOne(
         { _id: result.insertedId },
         { projection: { passwordHash: 0 } }
       );
@@ -50,7 +56,7 @@ class User {
       throw new Error('User does not exist');
     }
 
-    const session = client.startSession();
+    const session = this.client.startSession();
 
     const transactionOptions = {
       readPreference: 'primary',
@@ -60,7 +66,7 @@ class User {
 
     await session.withTransaction(async () => {
       await Listing.deleteListing(user._id);
-      await users.deleteOne({ email });
+      await this.users.deleteOne({ email });
     }, transactionOptions);
   
     await session.endSession();
@@ -76,7 +82,7 @@ class User {
   }
 
   static async makeOfficial(email) {
-    const updateResponse = users.updateOne(
+    const updateResponse = this.users.updateOne(
       { email },
       { $set: { isOfficial: true } },
     );
@@ -89,6 +95,7 @@ class User {
  * @typedef UserInfo
  * @property {string} email
  * @property {string} passwordHash
+ * @property {boolean} isOfficial
  */
 
 module.exports = User;

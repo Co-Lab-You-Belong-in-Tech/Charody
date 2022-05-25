@@ -12,6 +12,7 @@ const mockUser = {
 };
 
 describe('Charody user routes', () => {
+  /** @type {MongoClient} */
   let client;
 
   beforeAll(async () => {
@@ -30,7 +31,7 @@ describe('Charody user routes', () => {
     }
     try {
       await User.injectDB(client);
-      await Listing.injectDB('listings');
+      await Listing.injectDB(client);
       await db.dropCollection('users');
       await db.createCollection('users');
       await db.dropCollection('listings');

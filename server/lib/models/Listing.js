@@ -39,14 +39,19 @@ class Listing {
       currentlyAvailable
     } = listingInfo;
 
-    await listings.updateOne({
-      userId,
-      zipcode,
-      allowsCats,
-      allowsDogs,
-      stairClimbingRequired,
-      numberOfDaysAvailable,
-      currentlyAvailable
+    return await listings.updateOne({
+      userId
+    },
+    {
+      $set: {
+        userId,
+        zipcode,
+        allowsCats,
+        allowsDogs,
+        stairClimbingRequired,
+        numberOfDaysAvailable,
+        currentlyAvailable
+      }
     }, {
       writeConcern: 'majority',
       upsert: true
@@ -63,24 +68,25 @@ class Listing {
    * @param {number} count - The maximum amount of listings to return.
    * @param {number} page - The 1 based page number, this query skips (count * (page - 1)) results.
    */
-  static async searchListingsByZipcode(searchCriteria, count = 20, page = 1) {
-    const {
+  static async searchListingsByZipcode(searchCriteria) {
+    let {
       zipcodes,
-      allowsCats,
-      allowsDogs,
-      stairClimbingRequired
+      count,
+      page,
+      ...rest
     } = searchCriteria;
 
-    if (!zipcodes || !zipcodes.length || typeof zipcodes[0] !== 'number')
-      throw new Error('A list of zipcodes must be provided as an array of numbers');
+    count = count ? count : 20;
+    page = page ? page : 1;
 
     const query = {
-      zipcode: { $in: searchCriteria.zipcodes }
+      zipcode: { $in: zipcodes },
+      ...rest
     };
 
-    if (typeof allowsCats === 'boolean') query.allowsCats = allowsCats;
-    if (typeof allowsDogs === 'boolean') query.allowsDogs = allowsDogs;
-    if (typeof stairClimbingRequired === 'boolean') query.stairClimbingRequired = stairClimbingRequired;
+    console.log(JSON.stringify(query, null, 4));
+    console.log(JSON.stringify(searchCriteria, null, 4));
+
     return await listings.find(query).skip(count * (page - 1)).limit(count).toArray();
   }
 }
@@ -103,6 +109,8 @@ class Listing {
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
  * @property {boolean} stairClimbingRequired
+ * @property {number} count
+ * @property {number} page
  */
 
 module.exports = Listing;
