@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const cookieParser = require('cookie-parser');
-//const authenticate = require('./middleware/authenticate.js');
+const authenticate = require('./middleware/authenticate.js');
+const authorize = require('./middleware/authorize.js');
 
 // Built in middleware
 app.use(express.json());
@@ -23,7 +24,7 @@ app.use(
 
 // App routes
 app.use('/api/v1/users', require('./controllers/users'));
-//app.use('/api/v1/cookbooks', authenticate, require('./controllers/cookbooks'));
+app.use('/api/v1/listings', authenticate, authorize, require('./controllers/listings'));
 
 // Error handling & 404 middleware for when
 // a request doesn't match any app routes

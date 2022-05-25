@@ -1,7 +1,7 @@
 const app  = require('./lib/app');
 const { MongoClient } = require('mongodb');
-const User = require('.lib/dao/usersDAO');
-const Listing = require('./lib/models/Listing.js');
+const User = require('./lib/models/User');
+const Listing = require('./lib/models/Listing');
 
 const PORT = process.env.PORT || 7890;
 
