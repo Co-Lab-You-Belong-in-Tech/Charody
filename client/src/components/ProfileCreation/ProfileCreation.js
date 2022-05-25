@@ -5,7 +5,6 @@ import './profileCreation.css'
 
 // components
 import Info from './Info/info'
-import Contact from './Contact/contact'
 import Home from './Home/home'
 import Verify from './Verify/verify'
 
@@ -23,13 +22,11 @@ export default function ProfileCreation(){
                 <div>
                     <div className='navLink'>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Info</NavLink><div className='dash'/>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/contact`} url={url}>Contact</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/verify`} url={url}>Verify</NavLink>
                     </div>
                     <div className='form'>
                         <Route path={`${url}/info`}><Info url={url}/></Route>
-                        <Route path={`${url}/contact`}><Contact url={url}/></Route>
                         <Route path={`${url}/home`}><Home url={url}/></Route>
                         <Route path={`${url}/verify`} component={Verify}></Route>
                     </div>
