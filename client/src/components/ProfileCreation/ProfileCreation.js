@@ -22,12 +22,12 @@ export default function ProfileCreation(){
                 </h2>
                 <div>
                     <div className='navLink'>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Info</NavLink>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/contact`} url={url}>Contact</NavLink>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home</NavLink>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Info</NavLink><div className='dash'/>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/contact`} url={url}>Contact</NavLink><div className='dash'/>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/verify`} url={url}>Verify</NavLink>
                     </div>
-                    <div>
+                    <div className='form'>
                         <Route path={`${url}/info`}><Info url={url}/></Route>
                         <Route path={`${url}/contact`}><Contact url={url}/></Route>
                         <Route path={`${url}/home`}><Home url={url}/></Route>

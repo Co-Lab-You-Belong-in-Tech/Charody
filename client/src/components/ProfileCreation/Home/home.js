@@ -30,26 +30,26 @@ export default function Home(props){
             }))
             history.push(`${url}/verify`)
         }}>
-            <label>
-                <p>Do you accept kids?</p>
-                <input type='checkbox' onChange={e => setKids(convertTF(e.target.value))}></input>
-            </label>
-            <label>
-                <p>Do you accept dogs?</p>
-                <input type='checkbox' onChange={e => setDogs(convertTF(e.target.value))}></input>
-            </label>
-            <label>
-                <p>Do you accept cats?</p>
-                <input type='checkbox' onChange={e => setCats(convertTF(e.target.value))}></input>
-            </label>
-            <label>
-                <p>Do you have stairs?</p>
-                <input type='checkbox' onChange={e => setStairs(convertTF(e.target.value))}></input>
-            </label>
-            <label>
-                <p>Are you currently available to host?</p>
-                <input type='checkbox' onChange={e => setHosting(convertTF(e.target.value))}></input>
-            </label>
+            <div>
+                <input type='checkbox' id='kids' onChange={e => setKids(convertTF(e.target.value))}></input>
+                <label for='kids' className='forCheckbox'>Do you accept kids?</label>
+            </div>
+            <div>
+                <input type='checkbox' id='dogs' onChange={e => setDogs(convertTF(e.target.value))}></input>
+                <label for='dogs' className='forCheckbox'>Do you accept dogs?</label>
+            </div>
+            <div>
+                <input type='checkbox' id='cats' onChange={e => setCats(convertTF(e.target.value))}></input>
+                <label for='cats' className='forCheckbox'>Do you accept cats?</label>
+            </div>
+            <div>
+                <input type='checkbox' id='stairs' onChange={e => setStairs(convertTF(e.target.value))}></input>
+                <label for='stairs' className='forCheckbox'>Do you have stairs?</label>
+            </div>
+            <div>
+                <input type='checkbox' id='availibility' onChange={e => setHosting(convertTF(e.target.value))}></input>
+                <label for='availibility' className='forCheckbox'>Are you currently available to host?</label>
+            </div>
             <label>
                 <p>How many days can you host?<br/>Minimum 3 days, maximum 30 days</p>
                 <input placeholder='number' onChange={e => setHostDays(e.target.value)}></input>
