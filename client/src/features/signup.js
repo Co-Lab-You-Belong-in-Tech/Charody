@@ -15,7 +15,7 @@ const signupSlice = createSlice({
                 dogs: false,
                 stairs: false
             },
-            days: '',
+            days: -1,
             hosting: false
         }
     },

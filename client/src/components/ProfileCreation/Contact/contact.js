@@ -1,15 +1,26 @@
 import { useState } from "react"
 import { useHistory } from "react-router"
-export default function Contact(){
+import { useDispatch } from "react-redux"
+import { signup } from "../../../features/signup"
+
+export default function Contact(props){
+    const { url } = props
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [zip, setZip] = useState(-1)
-    const History = useHistory()
-    const uploadInfo = () => {
+    const history = useHistory()
+    const dispatch = useDispatch()
 
-    }
     return(
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault()
+            dispatch(signup({
+                phone: phone,
+                email: email,
+                zipCode: zip
+            }))
+            history.push(`${url}/home`)
+        }}>
             <input placeholder='Number (XXX) XXX - XXXX' onChange={e => {
                 setPhone(e.target.value)
             }}></input>

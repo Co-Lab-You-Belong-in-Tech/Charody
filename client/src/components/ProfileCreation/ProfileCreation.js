@@ -7,15 +7,13 @@ import './profileCreation.css'
 import Info from './Info/info'
 import Contact from './Contact/contact'
 import Home from './Home/home'
+import Verify from './Verify/verify'
 
-// testing
-import DisplayInfo from './accessingReduxInfo'
 export default function ProfileCreation(){
     const { url } = useRouteMatch()
     const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     return(
         <div className='profileCreation'>
-            <DisplayInfo/>
             <img src='https://via.placeholder.com/400x350'></img>
             <div>
                 <h2>
@@ -31,9 +29,9 @@ export default function ProfileCreation(){
                     </div>
                     <div>
                         <Route path={`${url}/info`}><Info url={url}/></Route>
-                        <Route path={`${url}/contact`} component={Contact}/>
-                        <Route path={`${url}/home`} component={Home}/>
-                        {/* <Route path={`${url}/verify`} component={Verify}/> */}
+                        <Route path={`${url}/contact`}><Contact url={url}/></Route>
+                        <Route path={`${url}/home`}><Home url={url}/></Route>
+                        <Route path={`${url}/verify`} component={Verify}></Route>
                     </div>
                 </div>  
             </div>
