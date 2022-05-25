@@ -7,15 +7,14 @@ const signupSlice = createSlice({
             firstName: '',
             lastName: '',
             phone: '',
-            email: '',
-            zipCode: -1,
+            zipCode: '',
             accessibility: {
                 kids: false,
                 cats: false,
                 dogs: false,
                 stairs: false
             },
-            days: -1,
+            days: '',
             hosting: false
         }
     },
