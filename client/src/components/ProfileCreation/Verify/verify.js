@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import './verify.css'
+import '../../components.css'
 
 import Info from '../Info/info'
 import Home from '../Home/home'
@@ -10,7 +11,7 @@ export default function Verify() {
         <div className='verifyForm'>
             <Info/>
             <Home/>
-            <button onClick={e => {
+            <button className='buttonColored full done' onClick={e => {
                 // sends const data to database
             }}>Done</button>
         </div>
