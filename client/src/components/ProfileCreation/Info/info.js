@@ -1,31 +1,31 @@
-import { useState } from "react"
 import { useHistory } from "react-router"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { signup } from "../../../features/signup"
 
 export default function Info(props){
     const { url } = props
-    const [first, setFirst] = useState('')
-    const [last, setLast] = useState('')
+    const data = useSelector(state => state.signup.value)
     const history = useHistory()
     const dispatch = useDispatch()
 
     return(
         <form onSubmit={e => {
             e.preventDefault()
-            dispatch(signup({
-                firstName: first,
-                lastName: last
-            }))
-            history.push(`${url}/contact`)
+            history.push(`${url}/home`)
         }}>
-            <input placeholder='First Name' onChange={e => {
-                setFirst(e.target.value)
+            <input placeholder='First Name' value={data.firstName} onChange={e => {
+                dispatch(signup({ firstName: e.target.value }))
             }}></input>
-            <input placeholder='Last Name' onChange={e => {
-                setLast(e.target.value)
+            <input placeholder='Last Name' value={data.lastName} onChange={e => {
+                dispatch(signup({ lastName: e.target.value }))
             }}></input>
-            <button type='submit'>Next</button>
+            <input placeholder='Number (XXX) XXX - XXXX' value={data.phone} onChange={e => {
+                dispatch(signup({ phone: e.target.value }))
+            }}></input>
+            <input placeholder='Zip Code' value={data.zipCode} onChange={e => {
+                dispatch(signup({ zipCode: e.target.value }))
+            }}></input>
+            <button type='submit' className='next'>Next</button>
         </form>
     )
 }
