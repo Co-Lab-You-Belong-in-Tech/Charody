@@ -26,7 +26,7 @@ export default function SignUp(){
                 
             </div>
             
-            <form>
+            <div>
                 <div className='navLink'>
                     <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/homeowner`}>Homeowner</NavLink>
                     <NavLink className='navLink' activeStyle={activeStyle}to={`${url}/official`}>Official</NavLink>
@@ -35,7 +35,7 @@ export default function SignUp(){
                     <Route path={`${url}/homeowner`} component={Homeowner}/>
                     <Route path={`${url}/official`} component={Official}/>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }
