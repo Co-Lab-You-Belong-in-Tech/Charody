@@ -11,6 +11,7 @@ import SignUp from './components/SignUp/signUp'
 import Login from './components/Login/login'
 import ProfileCreation from './components/ProfileCreation/ProfileCreation';
 import EditProfile from './components/EditProfile/editProfile';
+import Search from './components/Search/search';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' component={Login}/>
         <Route path='/profileCreation' component={ProfileCreation}/>
         <Route path='/editProfile' component={EditProfile}/>
+        <Route path='/search' component={Search}/>
         {/* <Route path='/' component={}/> */}
         <Footer/>
       </div>
