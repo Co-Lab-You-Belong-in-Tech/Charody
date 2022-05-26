@@ -107,7 +107,7 @@
   content: '';
   height: 2rem;
   width: 2rem;
-  border: black solid 2px;
+  border: black solid 1px;
   border-radius: .3rem;
 }
 
@@ -134,5 +134,17 @@
 .profileCreation > div .form form button[type=submit]:hover {
   background-color: white;
   color: #26B4F9;
+}
+
+.profileCreation > div .form .infoForm {
+  width: 100%;
+}
+
+.profileCreation > div .form .infoForm label {
+  display: none;
+}
+
+.profileCreation > div .form .infoForm .usernameFields input {
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=profileCreation.css.map */

@@ -10,6 +10,7 @@ import AboutUs from './components/AboutUs/aboutUs'
 import SignUp from './components/SignUp/signUp'
 import Login from './components/Login/login'
 import ProfileCreation from './components/ProfileCreation/ProfileCreation';
+import EditProfile from './components/EditProfile/editProfile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/signUp' component={SignUp}/>
         <Route path='/login' component={Login}/>
         <Route path='/profileCreation' component={ProfileCreation}/>
+        <Route path='/editProfile' component={EditProfile}/>
         {/* <Route path='/' component={}/> */}
         <Footer/>
       </div>
