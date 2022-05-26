@@ -13,9 +13,9 @@ export default function Homeowner(){
             <input placeholder='Password'></input>
             <button type='submit' className='buttonColored full'>Create an Account</button>
             <div>
-                <div></div>
+                <div className='dash'></div>
                 OR
-                <div></div>
+                <div className='dash'></div>
             </div>
             <button className='buttonColored invert'>Sign Up With Google</button>
             <button className='buttonColored invert'>Sign Up With Facebook</button>

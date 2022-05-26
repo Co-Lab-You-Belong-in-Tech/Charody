@@ -9,7 +9,7 @@ export default function Home(props){
     const dispatch = useDispatch()
 
     return(
-        <form onSubmit={e => {
+        <form className='homeForm' onSubmit={e => {
             e.preventDefault()
             history.push(`${url}/verify`)
         }}>
@@ -65,7 +65,7 @@ export default function Home(props){
             </div>
             <label>
                 <p>How many days can you host?<br/>Minimum 3 days, maximum 30 days</p>
-                <input placeholder='number' className='daysInput' value={data.days} onChange={e => dispatch(signup({ days: e.target.value }))}></input>
+                <input type='number' placeholder='number' className='daysInput' value={data.days} onChange={e => dispatch(signup({ days: e.target.value }))}></input>
             </label>
             <button type='submit' className='next'>Next</button>
         </form>
