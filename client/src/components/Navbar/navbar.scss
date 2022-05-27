@@ -1,11 +1,16 @@
 .navbar{
-    height: 8vh;
+    height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
     img{
-        max-height: 6vh;
+        max-height: 2.5rem;
     }
     .navLink{
         margin-right: 1rem;
