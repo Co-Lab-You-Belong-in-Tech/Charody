@@ -12,6 +12,7 @@ import Login from './components/Login/login'
 import ProfileCreation from './components/ProfileCreation/ProfileCreation';
 import EditProfile from './components/EditProfile/editProfile';
 import Search from './components/Search/search';
+import ForgotPassword from './components/ForgotPassword/forgotPassword';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path='/profileCreation' component={ProfileCreation}/>
         <Route path='/editProfile' component={EditProfile}/>
         <Route path='/search' component={Search}/>
-        {/* <Route path='/' component={}/> */}
+        <Route path='/forgotPassword' component={ForgotPassword}/>
         <Footer/>
       </div>
     </Router>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router"
 export default function Homeowner(){
     const history = useHistory()
     return(
-        <form onSubmit={e => {
+        <form className='homeownerForm' onSubmit={e => {
             e.preventDefault()
             console.log('submitted')
             history.push('/profileCreation/info')

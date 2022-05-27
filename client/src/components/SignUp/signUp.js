@@ -1,4 +1,4 @@
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink, Link } from 'react-router-dom'
 import { useRouteMatch } from 'react-router'
 import './signUp.css'
 import '../components.css'
@@ -34,6 +34,9 @@ export default function SignUp(){
                 <div>
                     <Route path={`${url}/homeowner`} component={Homeowner}/>
                     <Route path={`${url}/official`} component={Official}/>
+                </div>
+                <div className='loginOptions'>
+                    <Link>Forgot Password?</Link>
                 </div>
             </div>
         </div>

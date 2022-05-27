@@ -61,7 +61,7 @@ export default function Search(){
     const cards = data.map(obj => {
         return(
             <div className='userCard'>
-                <h3>User: {obj._id}</h3>
+                <h3>User: {obj.firstName}</h3>
                 <p>Phone: {obj.phone}</p>
                 <p>Email: {obj.email}</p>
                 <p>Days Available to Host: {obj.days}</p>
@@ -93,7 +93,7 @@ export default function Search(){
                     </div>
                     <div className='checkboxFilter'>
                         <input className='forCheckbox' id='stairsFilter' type='checkbox'></input>
-                        <label for='stairsFilter'>Has Stairs?</label>
+                        <label for='stairsFilter'>No Stairs?</label>
                     </div>
                 </div>
                 <button className='buttonColored full'>Filter</button>
