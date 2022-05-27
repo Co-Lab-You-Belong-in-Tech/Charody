@@ -29,7 +29,7 @@ export default function SignUp(){
             <div>
                 <div className='navLink'>
                     <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/homeowner`}>Homeowner</NavLink>
-                    <NavLink className='navLink' activeStyle={activeStyle}to={`${url}/official`}>Official</NavLink>
+                    <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/official`}>Official</NavLink>
                 </div>
                 <div>
                     <Route path={`${url}/homeowner`} component={Homeowner}/>
