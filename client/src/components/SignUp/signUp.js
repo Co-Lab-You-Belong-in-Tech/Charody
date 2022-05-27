@@ -1,17 +1,14 @@
-import { NavLink, Link, useParams, useRouteMatch, useHistory } from 'react-router-dom'
+import { NavLink, Link, useParams, useHistory } from 'react-router-dom'
 import './signUp.css'
 import '../components.css'
 
 import signUpImg from '../../static/images/Sign up.jpg'
 // components
-import Homeowner from './Homeowner/homeowner'
-import Official from './Official/official'
 import { getUser, logIn, signUp } from '../../services/users.js'
 import { useState } from 'react'
 import { useAuth } from '../../context/AuthContext.js'
 
 export default function SignUp(){
-    const { url } = useRouteMatch()
     const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     const { type } = useParams()
     const history = useHistory()
