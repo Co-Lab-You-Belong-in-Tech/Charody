@@ -15,7 +15,8 @@ const signupSlice = createSlice({
                 stairs: false
             },
             days: '',
-            hosting: false
+            hosting: false,
+            type: '',
         }
     },
     reducers: {

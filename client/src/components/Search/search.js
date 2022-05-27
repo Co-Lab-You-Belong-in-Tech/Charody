@@ -5,6 +5,13 @@ import '../components.css'
 export default function Search(){
     const [data, setData] = useState([])
     const dataRef = useRef()
+    // useStates
+    const [miles, setMiles] = useState()
+    const [fromZip, setFromZip] = useState()
+    const [kidsFilter, setKidsFilter] = useState(false)
+    const [dogsFilter, setDogsFilter] = useState(false)
+    const [catsFilter, setCatsFilter] = useState(false)
+    const [StairsFilter, setStairsFilter] = useState(false)
     useEffect(() => {
         // obtains data from database
         setData([
@@ -74,25 +81,37 @@ export default function Search(){
                 <div>
                     <label>Miles from Location</label>
                     <div>
-                        <input placeholder='Miles'/>
-                        <input placeholder='from Zip Code'/>
+                        <input placeholder='Miles' onChange={e => {
+                            setMiles(e.target.value)
+                        }}/>
+                        <input placeholder='from Zip Code' onChange={e => {
+                            setFromZip(e.target.value)
+                        }}/>
                     </div>
                 </div>
                 <div>
                     <div className='checkboxFilter'>
-                        <input className='forCheckbox' id='kidsFilter' type='checkbox'></input>
+                        <input className='forCheckbox' id='kidsFilter' type='checkbox' onChange={e => {
+                            setKidsFilter(val => !val)
+                        }}></input>
                         <label for='kidsFilter'>Accepts Kids?</label>
                     </div>
                     <div className='checkboxFilter'>
-                        <input className='forCheckbox' id='dogsFilter' type='checkbox'></input>
+                        <input className='forCheckbox' id='dogsFilter' type='checkbox' onChange={e => {
+                            setDogsFilter(val => !val)
+                        }}></input>
                         <label for='dogsFilter'>Accepts Dogs?</label>
                     </div>
                     <div className='checkboxFilter'>
-                        <input className='forCheckbox' id='catsFilter' type='checkbox'></input>
+                        <input className='forCheckbox' id='catsFilter' type='checkbox' onChange={e => {
+                            setCatsFilter(val => !val)
+                        }}></input>
                         <label for='catsFilter'>Accepts Cats?</label>
                     </div>
                     <div className='checkboxFilter'>
-                        <input className='forCheckbox' id='stairsFilter' type='checkbox'></input>
+                        <input className='forCheckbox' id='stairsFilter' type='checkbox' onChange={e => {
+                            setStairsFilter(val => !val)
+                        }}></input>
                         <label for='stairsFilter'>No Stairs?</label>
                     </div>
                 </div>
