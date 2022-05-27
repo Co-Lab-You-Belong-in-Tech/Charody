@@ -19,6 +19,7 @@
   padding: .5rem .8rem;
   -webkit-transition: 200ms;
   transition: 200ms;
+  text-decoration: none;
 }
 
 .buttonColored:hover {

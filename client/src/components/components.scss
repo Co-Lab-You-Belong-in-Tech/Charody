@@ -17,6 +17,7 @@ $button-bg: #26B4F9;
     color: $button-color !important;
     padding: .5rem .8rem;
     transition: 200ms;
+    text-decoration: none;
     &:hover{
         border-color: $button-bg;
         background-color: rgba(0, 0, 0, 0);
