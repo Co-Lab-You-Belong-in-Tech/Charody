@@ -1,5 +1,6 @@
 import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css';
+import { Helmet } from 'react-helmet'
 
 // components
 import Navbar from './components/Navbar/navbar'
@@ -18,6 +19,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Helmet>
+          <title>Charody</title>
+        </Helmet>
         <Navbar/>
         <Route exact path="/" component={Home}/>
         <Route path='/aboutUs' component={AboutUs}/>
