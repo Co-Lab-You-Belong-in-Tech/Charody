@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,GAAC,GAAG,CAAA;EACJ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,WAAW,EAAE,MAAM;CAOtB;;AAVD,AAII,IAJA,GAAC,GAAG,GAIF,GAAG,AAAA,KAAK,CAAA;EACN,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,eAAe;EACvB,MAAM,EAAE,OAAO;CAClB",
-    "sources": [
-        "homeowner.scss"
-    ],
-    "names": [],
-    "file": "homeowner.css"
-}
