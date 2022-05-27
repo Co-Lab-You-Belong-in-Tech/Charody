@@ -13,23 +13,26 @@ import ProfileCreation from './components/ProfileCreation/ProfileCreation';
 import EditProfile from './components/EditProfile/editProfile';
 import Search from './components/Search/search';
 import ForgotPassword from './components/ForgotPassword/forgotPassword';
+import { AuthProvider } from './context/AuthContext.js';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar/>
-        <Route exact path="/" component={Home}/>
-        <Route path='/aboutUs' component={AboutUs}/>
-        <Route path='/signUp' component={SignUp}/>
-        <Route path='/login' component={Login}/>
-        <Route path='/profileCreation' component={ProfileCreation}/>
-        <Route path='/editProfile' component={EditProfile}/>
-        <Route path='/search' component={Search}/>
-        <Route path='/forgotPassword' component={ForgotPassword}/>
-        <Footer/>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Navbar/>
+          <Route exact path="/" component={Home}/>
+          <Route path='/aboutUs' component={AboutUs}/>
+          <Route path='/signUp' component={SignUp}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/profileCreation' component={ProfileCreation}/>
+          <Route path='/editProfile' component={EditProfile}/>
+          <Route path='/search' component={Search}/>
+          <Route path='/forgotPassword' component={ForgotPassword}/>
+          <Footer/>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
