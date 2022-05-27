@@ -18,16 +18,8 @@ const AuthProvider = ({ children }) => {
     getCurrentUser();
   }, []);
 
-  const updateUserPreference = () => {
-    setUser((prevState) => {
-      return {
-        ...prevState,
-      };
-    });
-  };
-
   const value = useMemo(
-    () => ({ user, setUser, updateUserPreference }),
+    () => ({ user, setUser }),
     [user],
   );
   if (loading) {

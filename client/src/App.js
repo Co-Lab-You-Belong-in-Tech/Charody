@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 
 // components
@@ -13,26 +13,24 @@ import ProfileCreation from './components/ProfileCreation/ProfileCreation';
 import EditProfile from './components/EditProfile/editProfile';
 import Search from './components/Search/search';
 import ForgotPassword from './components/ForgotPassword/forgotPassword';
-import { AuthProvider } from './context/AuthContext.js';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 
 function App() {
   return (
-    <AuthProvider>
       <Router>
         <div className="App">
           <Navbar/>
           <Route exact path="/" component={Home}/>
           <Route path='/aboutUs' component={AboutUs}/>
-          <Route path='/signUp' component={SignUp}/>
+          <Route path='/signUp/:type' component={SignUp}/>
           <Route path='/login' component={Login}/>
-          <Route path='/profileCreation' component={ProfileCreation}/>
-          <Route path='/editProfile' component={EditProfile}/>
-          <Route path='/search' component={Search}/>
+          <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
+          <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
+          <PrivateRoute path='/search'> <Search/> </PrivateRoute>
           <Route path='/forgotPassword' component={ForgotPassword}/>
           <Footer/>
         </div>
       </Router>
-    </AuthProvider>
   );
 }
 
