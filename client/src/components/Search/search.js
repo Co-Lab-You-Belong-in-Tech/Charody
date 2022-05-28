@@ -15,60 +15,6 @@ export default function Search(){
     const [stairsFilter, setStairsFilter] = useState(false)
     const [page, setPage] = useState(1)
 
-    useEffect(() => {
-        // obtains data from database
-        const dummyData = [
-            {
-                _id: 'uniqueID1',
-                firstName: 'user1',
-                lastName: 'user1.last',
-                phone: '1234567890',
-                zipCode: '12345',
-                accessibility: {
-                    kids: true,
-                    cats: false,
-                    dogs: false,
-                    stairs: false
-                },
-                days: '1',
-                hosting: false,
-                email: 'something@gmail.com'
-            },
-            {
-                _id: 'uniqueID2',
-                firstName: 'user2',
-                lastName: 'user2.last',
-                phone: '2345678901',
-                zipCode: '23451',
-                accessibility: {
-                    kids: true,
-                    cats: true,
-                    dogs: false,
-                    stairs: false
-                },
-                days: '2',
-                hosting: true,
-                email: 'johnDoe@gmail.com'
-            },
-            {
-                _id: 'uniqueID3',
-                firstName: 'user3',
-                lastName: 'user3.last',
-                phone: '3456789012',
-                zipCode: '34512',
-                accessibility: {
-                    kids: true,
-                    cats: true,
-                    dogs: true,
-                    stairs: false
-                },
-                days: '3',
-                hosting: false,
-                email: 'test@gmail.com'
-            }
-        ]
-    }, [])
-
     const fetchSearchResults = () => {
         const searchCriteria = {
             zipcode: parseInt(fromZip),

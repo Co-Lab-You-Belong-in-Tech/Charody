@@ -15,6 +15,7 @@ import EditProfile from './components/EditProfile/editProfile';
 import Search from './components/Search/search';
 import ForgotPassword from './components/ForgotPassword/forgotPassword';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
+import OfficialRoute from './components/PrivateRoute/OfficialRoute.js';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path='/login' component={Login}/>
         <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
         <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
-        <PrivateRoute path='/search'> <Search/> </PrivateRoute>
+        <OfficialRoute path='/search'> <Search/> </OfficialRoute>
         <Route path='/forgotPassword' component={ForgotPassword}/>
         <Footer/>
       </div>
