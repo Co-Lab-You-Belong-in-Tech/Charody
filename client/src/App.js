@@ -1,5 +1,6 @@
 import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css';
+import { Helmet } from 'react-helmet'
 
 // components
 import Navbar from './components/Navbar/navbar'
@@ -17,20 +18,23 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 
 function App() {
   return (
-      <Router>
-        <div className="App">
-          <Navbar/>
-          <Route exact path="/" component={Home}/>
-          <Route path='/aboutUs' component={AboutUs}/>
-          <Route path='/signUp/:type' component={SignUp}/>
-          <Route path='/login' component={Login}/>
-          <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
-          <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
-          <PrivateRoute path='/search'> <Search/> </PrivateRoute>
-          <Route path='/forgotPassword' component={ForgotPassword}/>
-          <Footer/>
-        </div>
-      </Router>
+    <Router>
+      <div className="App">
+        <Helmet>
+          <title>Charody</title>
+        </Helmet>
+        <Navbar/>
+        <Route exact path="/" component={Home}/>
+        <Route path='/aboutUs' component={AboutUs}/>
+        <Route path='/signUp/:type' component={SignUp}/>
+        <Route path='/login' component={Login}/>
+        <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
+        <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
+        <PrivateRoute path='/search'> <Search/> </PrivateRoute>
+        <Route path='/forgotPassword' component={ForgotPassword}/>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
