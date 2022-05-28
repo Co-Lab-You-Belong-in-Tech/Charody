@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import './search.css'
 import '../components.css'
+import { searchListings } from '../../services/listings.js'
 
 export default function Search(){
     const [data, setData] = useState([])
@@ -11,10 +12,12 @@ export default function Search(){
     const [kidsFilter, setKidsFilter] = useState(false)
     const [dogsFilter, setDogsFilter] = useState(false)
     const [catsFilter, setCatsFilter] = useState(false)
-    const [StairsFilter, setStairsFilter] = useState(false)
+    const [stairsFilter, setStairsFilter] = useState(false)
+    const [page, setPage] = useState(1)
+
     useEffect(() => {
         // obtains data from database
-        setData([
+        const dummyData = [
             {
                 _id: 'uniqueID1',
                 firstName: 'user1',
@@ -63,15 +66,34 @@ export default function Search(){
                 hosting: false,
                 email: 'test@gmail.com'
             }
-        ])
+        ]
     }, [])
+
+    const fetchSearchResults = () => {
+        const searchCriteria = {
+            zipcode: parseInt(fromZip),
+            radius: parseInt(miles),
+            allowsCats: catsFilter,
+            allowsDogs: dogsFilter,
+            noStairs: stairsFilter,
+            page: page
+        }
+        const ac = new AbortController()
+        searchListings(searchCriteria, ac.signal)
+            .then(res => {
+                console.log(res)
+                setData(res)
+            }).catch(e => console.log(e))
+
+    }
+
     const cards = data.map(obj => {
         return(
-            <div className='userCard'>
+            <div className='userCard' key={obj._id}>
                 <h3>User: {obj.firstName}</h3>
                 <p>Phone: {obj.phone}</p>
                 <p>Email: {obj.email}</p>
-                <p>Days Available to Host: {obj.days}</p>
+                <p>Days Available to Host: {obj.numberOfDaysAvailable}</p>
             </div>
         )
     })
@@ -115,7 +137,7 @@ export default function Search(){
                         <label for='stairsFilter'>No Stairs?</label>
                     </div>
                 </div>
-                <button className='buttonColored full'>Filter</button>
+                <button className='buttonColored full' onClick={fetchSearchResults}>Filter</button>
             </div>
             <div className='userCards'>{cards}</div>
         </div>

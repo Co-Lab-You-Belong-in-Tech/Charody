@@ -30,13 +30,13 @@ class User {
    * @param {UserInfo} userInfo - The information of the user to add
    */
   static async addUser(userInfo) {
-    const { email, passwordHash } = userInfo;
+    const { email, passwordHash, isOfficial } = userInfo;
     try {
       
       const result = await this.users.insertOne({
         email,
         passwordHash,
-        isOfficial: false
+        isOfficial
       }, { writeConcern: 'majority' });
 
       return await this.users.findOne(
