@@ -10,7 +10,7 @@ export default function OfficialRoute({ children, ...rest }) {
     <Route
       {...rest}
       render={({ location }) =>
-        (user?._id && user?.isOffical) ? (children) : (
+        (user?._id && user?.isOfficial) ? (children) : (
           <Redirect
             to={{
               pathname: "/login",

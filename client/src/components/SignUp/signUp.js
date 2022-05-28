@@ -4,33 +4,20 @@ import '../components.css'
 
 import signUpImg from '../../static/images/Sign up.jpg'
 // components
-import { getUser, logIn, signUp } from '../../services/users.js'
 import { useState } from 'react'
 import { useAuth } from '../../context/AuthContext.js'
 
 export default function SignUp(){
     const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     const { type } = useParams()
-    const history = useHistory()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const { setUser } = useAuth()
+    const { signUp } = useAuth()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const isHomeownerSignup = type === 'homeowner'
-        const res = await signUp(email, password, !isHomeownerSignup)
-        console.log('submitted')
-        if (res?.email === email) { // TODO: Make the success response better
-            await logIn(email, password);
-            const loggedInUser = await getUser();
-            setUser(loggedInUser);
-            if(isHomeownerSignup) {
-                history.push('/profileCreation/info')
-            } else {
-                history.push('/search')
-            }
-        }
+        const isOfficial = type === 'official'
+        signUp(email, password, isOfficial)
     }
 
     return(

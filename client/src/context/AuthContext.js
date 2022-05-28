@@ -1,11 +1,13 @@
-import { createContext, useContext, useMemo, useState, useEffect } from 'react';
-import { getUser } from '../services/users';
+import { createContext, useContext, useMemo, useState, useEffect, useCallback } from 'react';
+import { getUser, logIn, signUp as postSignUp } from '../services/users.js'
+import { useHistory } from 'react-router-dom'
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     const getCurrentUser = async () => {
@@ -18,8 +20,24 @@ const AuthProvider = ({ children }) => {
     getCurrentUser();
   }, []);
 
+  const signUp = useCallback(async (email, password, isOfficial) => {
+    const res = await postSignUp(email, password, isOfficial)
+    console.log('submitted')
+    if (res?.email === email) { // TODO: Make the success response better
+        await logIn(email, password);
+        const loggedInUser = await getUser();
+        setUser(loggedInUser);
+        if(isOfficial) {
+            history.push('/search')
+        } else {
+            history.push('/profileCreation/info')
+        }
+    }
+
+  }, [])
+
   const value = useMemo(
-    () => ({ user, setUser }),
+    () => ({ user, setUser, signUp }),
     [user],
   );
   if (loading) {

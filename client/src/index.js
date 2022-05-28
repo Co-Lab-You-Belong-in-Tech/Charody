@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import signupReducer from './features/signup'
-import { AuthProvider } from './context/AuthContext.js';
 
 const store = configureStore({
   reducer: {
@@ -17,9 +16,7 @@ const store = configureStore({
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <AuthProvider>
         <App />
-      </AuthProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
