@@ -18,14 +18,14 @@ export default function SignUp(){
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const homeownerSignup = type === 'homeowner'
-        const res = await signUp(email, password)
+        const isHomeownerSignup = type === 'homeowner'
+        const res = await signUp(email, password, !isHomeownerSignup)
         console.log('submitted')
-        if (res.email === email) { // TODO: Make the success response better
+        if (res?.email === email) { // TODO: Make the success response better
             await logIn(email, password);
             const loggedInUser = await getUser();
             setUser(loggedInUser);
-            if(homeownerSignup) {
+            if(isHomeownerSignup) {
                 history.push('/profileCreation/info')
             } else {
                 history.push('/search')

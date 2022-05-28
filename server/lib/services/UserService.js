@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 module.exports = class UserService {
-  static async create({ email, password }) {
+  static async create({ email, password, isOfficial }) {
     const existingUsername = await User.getUser(email);
 
     if (existingUsername) throw new Error('That email is already in use, please log in');
@@ -16,6 +16,7 @@ module.exports = class UserService {
     const user = await User.addUser({
       email,
       passwordHash,
+      isOfficial
     });
 
     return user;

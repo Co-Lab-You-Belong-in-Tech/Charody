@@ -30,11 +30,14 @@ class Listing {
    */
   static async upsertListing(listingInfo) {
     const {
+      firstName,
+      lastName,
+      phone,
       userId,
       zipcode,
       allowsCats,
       allowsDogs,
-      stairClimbingRequired,
+      noStairs,
       numberOfDaysAvailable,
       currentlyAvailable
     } = listingInfo;
@@ -44,11 +47,14 @@ class Listing {
     },
     {
       $set: {
+        firstName,
+        lastName,
+        phone,
         userId,
         zipcode,
         allowsCats,
         allowsDogs,
-        stairClimbingRequired,
+        noStairs,
         numberOfDaysAvailable,
         currentlyAvailable
       }
@@ -80,12 +86,18 @@ class Listing {
     page = page ? page : 1;
 
     const query = {
-      zipcode: { $in: zipcodes },
-      ...rest
+      zipcode: { $in: zipcodes }
     };
 
-    console.log(JSON.stringify(query, null, 4));
-    console.log(JSON.stringify(searchCriteria, null, 4));
+    // Make the query ignorant of false values
+    Object.keys(rest).map(key => {
+      if(rest[key]) {
+        query[key] = true;
+      }
+    });
+
+    console.log('asdfasdfasdfasdf');
+    console.log(query);
 
     return await listings.find(query).skip(count * (page - 1)).limit(count).toArray();
   }
@@ -98,7 +110,7 @@ class Listing {
  * @property {number} zipcode
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
- * @property {boolean} stairClimbingRequired
+ * @property {boolean} noStairs
  * @property {number} numberOfDaysAvailable
  * @property {boolean} currentlyAvailable
  */
@@ -108,7 +120,7 @@ class Listing {
  * @property {number[]} zipcodes
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
- * @property {boolean} stairClimbingRequired
+ * @property {boolean} noStairs
  * @property {number} count
  * @property {number} page
  */
