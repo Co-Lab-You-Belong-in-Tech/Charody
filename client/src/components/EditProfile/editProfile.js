@@ -9,7 +9,6 @@ import './editProfile.css'
 import Info from '../ProfileCreation/Info/info'
 import Home from '../ProfileCreation/Home/home'
 
-
 export default function EditProfile() {
     const { url } = useRouteMatch()
     const data = useSelector(state => state.signup.value)
