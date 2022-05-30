@@ -53,3 +53,14 @@ $button-bg: #26B4F9;
         right: 0;
     }
 }
+
+// button text
+.buttonText{
+    border: none;
+    background: none;
+    font-size: 1rem;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

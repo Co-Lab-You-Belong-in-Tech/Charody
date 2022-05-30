@@ -63,4 +63,15 @@
   left: 0;
   right: 0;
 }
+
+.buttonText {
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.buttonText:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 /*# sourceMappingURL=components.css.map */
