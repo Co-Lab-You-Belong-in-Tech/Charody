@@ -19,12 +19,17 @@
 .howItWorks{
     &>*{ margin: 7vh 0; }
     .cards{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        &>*{
-            max-width: 20vw;
+        &>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            &:first-child{
+                align-items: flex-end;
+                img{
+                    width: 20vw;
+                    height: 100%;
+                }
+            }
         }
     }
 }
