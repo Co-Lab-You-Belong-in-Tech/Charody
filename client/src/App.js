@@ -37,7 +37,6 @@ function App() {
           <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
           <OfficialRoute path='/search'> <Search/> </OfficialRoute>
           <Route path='/forgotPassword' component={ForgotPassword}/>
-          <Footer/>
         </div>
       </AuthProvider>
     </Router>

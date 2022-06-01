@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'
 import Card from '../Card/card'
 import ImgTextBlock from '../ImgTextBlock/imgTextBlock'
+import Footer from '../Footer/footer'
 import './home.css'
 import '../components.css'
 // image imports
@@ -94,6 +95,7 @@ export default function Home() {
                 left={true}
                 img={volunteer}
             />
+            <Footer/>
         </div>
     )
 }
