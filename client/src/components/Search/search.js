@@ -85,7 +85,11 @@ export default function Search(){
                 </div>
                 <button className='buttonColored full' onClick={fetchSearchResults}>Filter</button>
             </div>
-            <div className='userCards'>{cards}</div>
+            <div className='searchRightCol'>
+                <h2>Search Results</h2>
+                <p>We found <b>{'#'} results</b> based on your filters.</p>
+                <div className='userCards'>{cards}</div>
+            </div>
         </div>
     )
 }

@@ -50,6 +50,11 @@ $cardBorder: #1B1B1B;
             }
         }
     }
+    .searchRightCol{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
     // cards style
     .userCards{
         margin: 1rem 0;

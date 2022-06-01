@@ -77,6 +77,17 @@
   color: black;
 }
 
+.officialSearch .searchRightCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: start;
+}
+
 .officialSearch .userCards {
   margin: 1rem 0;
 }
