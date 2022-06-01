@@ -1,0 +1,23 @@
+.signupConfirmation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+
+.signupConfirmation > img {
+  width: 40vw;
+}
+
+.signupConfirmation > .confirmationLink {
+  color: #26B4F9;
+  text-decoration: none;
+}
+/*# sourceMappingURL=signupConfirmation.css.map */

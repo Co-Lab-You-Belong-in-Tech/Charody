@@ -29,7 +29,7 @@ export default function Navbar() {
                 {/* login/logout */}
                 {auth.user ? (
                     <Fragment>
-                        <NavLink className='navLink buttonColored invert' to='/login'>Login</NavLink>
+                        <NavLink className='navLink buttonColored secondary' to='/login'>Login</NavLink>
                         <NavLink className='navLink buttonColored' to='/signUp/homeowner'>Sign Up</NavLink>
                     </Fragment>
                 ) : (

@@ -15,7 +15,7 @@ import aboutYourGuest from '../../static/images/guest.png'
 import volunteer from '../../static/images/Volunteer.png'
 export default function Home() {
     return(
-        <div>
+        <div className='homePage'>
             <div className='hero overlay'>
                 <img src={heroSection}></img>
                 <div>
@@ -27,22 +27,27 @@ export default function Home() {
             <div className='howItWorks'>
                 <h1>How It Works</h1>
                 <div className='cards'>
-                    <Card 
-                        title='Step 1'
-                        img={step1}
-                        txt='Create an account and fill basic personal and housing information.  Only disaster relief officials have access to this.'
-                    />
-                    <Card 
-                        title='Step 2'
-                        img={step2}
-                        txt='If a disaster occurs and shelter is needed, our partner organization will geolocate volunteers to contact.'
-                    />
-                    <Card 
-                        title='Step 3'
-                        img={step3}
-                        txt='Based on the information the partner organization shares of the victims, you can choose how many to host and for how long but not longer than 30 days.'
-                    />
+                    <div>
+                        <img src={step1}></img>
+                        <img src={step2}></img>
+                        <img src={step3}></img>
+                    </div>
+                    <div>
+                        <Card 
+                            title='Step 1'
+                            txt='Create an account and fill basic personal and housing information.  Only disaster relief officials have access to this.'
+                        />
+                        <Card 
+                            title='Step 2'
+                            txt='If a disaster occurs and shelter is needed, our partner organization will geolocate volunteers to contact.'
+                        />
+                        <Card 
+                            title='Step 3'
+                            txt='Based on the information the partner organization shares of the victims, you can choose how many to host and for how long but not longer than 30 days.'
+                        />
+                    </div>
                 </div>
+                
             </div>
             <ImgTextBlock
                 title='The impact you make'
