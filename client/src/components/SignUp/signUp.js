@@ -46,7 +46,7 @@ export default function SignUp(){
                     <button type='submit' className='buttonColored full'>Create an Account</button>
                 </form>
                 <div className='loginOptions'>
-                    <Link>Forgot Password?</Link>
+                    <Link to='/forgotPassword'>Forgot Password?</Link>
                 </div>
             </div>
         </div>

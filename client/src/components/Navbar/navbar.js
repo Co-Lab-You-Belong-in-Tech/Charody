@@ -10,7 +10,7 @@ export default function Navbar() {
     return(
         <div className='navbar'>
             <div>
-                <NavLink className='navLink' to='/'><img src={Logo}></img></NavLink>
+                <NavLink className='navLink' to='/'><img src={Logo} alt=''></img></NavLink>
             </div>
             <div>
                 <NavLink className='navLink' to='/aboutUs'>About Us</NavLink>
