@@ -15,7 +15,7 @@ import aboutYourGuest from '../../static/images/guest.png'
 import volunteer from '../../static/images/Volunteer.png'
 export default function Home() {
     return(
-        <div>
+        <div className='homePage'>
             <div className='hero overlay'>
                 <img src={heroSection}></img>
                 <div>

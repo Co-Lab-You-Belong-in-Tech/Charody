@@ -1,3 +1,7 @@
+.homePage > div:nth-child(odd) {
+  background-color: #DDF4FF26;
+}
+
 .hero {
   height: 80vh;
   overflow: hidden;

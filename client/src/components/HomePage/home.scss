@@ -1,3 +1,15 @@
+$sectionColor: #F7FCFD;
+$sectionColorSecondary: #DDF4FF26;
+.homePage{
+    &>div{
+        &:nth-child(odd){
+            background-color: $sectionColorSecondary;
+        }
+        &:nth-child(even){
+            // background-color: $sectionColor;
+        }
+    }
+}
 // sections
 .hero{
     height: 80vh;
