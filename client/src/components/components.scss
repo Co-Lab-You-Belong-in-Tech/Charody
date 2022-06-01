@@ -1,5 +1,6 @@
 $button-color: white;
 $button-bg: #26B4F9;
+$buttonSecondary: #4BD37B;
 .grayButton{
     text-decoration: none;
     background-color: $button-bg;
@@ -30,6 +31,14 @@ $button-bg: #26B4F9;
         &:hover{
             background-color: $button-bg;
             color: $button-color !important;
+        }
+    }
+    &.secondary{
+        background-color: $buttonSecondary;
+        &:hover{
+            color: $buttonSecondary !important;
+            background-color: $button-color;
+            border-color: $buttonSecondary;
         }
     }
     &.full:hover{

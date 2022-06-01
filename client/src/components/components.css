@@ -39,6 +39,16 @@
   color: white !important;
 }
 
+.buttonColored.secondary {
+  background-color: #4BD37B;
+}
+
+.buttonColored.secondary:hover {
+  color: #4BD37B !important;
+  background-color: white;
+  border-color: #4BD37B;
+}
+
 .buttonColored.full:hover {
   border-color: #26B4F9;
   background-color: white;
