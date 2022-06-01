@@ -17,7 +17,7 @@ export default function Home() {
     return(
         <div className='homePage'>
             <div className='hero overlay'>
-                <img src={heroSection}></img>
+                <img src={heroSection} alt=''></img>
                 <div>
                     <h1>Temporary housing<br/>Forever grateful</h1>
                     <p>Help victims of natural disasters by providing<br/>short term shelter</p>
@@ -28,9 +28,9 @@ export default function Home() {
                 <h1>How It Works</h1>
                 <div className='cards'>
                     <div>
-                        <img src={step1}></img>
-                        <img src={step2}></img>
-                        <img src={step3}></img>
+                        <img src={step1} alt=''></img>
+                        <img src={step2} alt=''></img>
+                        <img src={step3} alt=''></img>
                     </div>
                     <div>
                         <Card 
