@@ -1,0 +1,14 @@
+$colorPrimary: #26B4F9;
+.signupConfirmation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &>img{
+        width: 40vw;
+    }
+    padding: 1rem 0;
+    &>.confirmationLink{
+        color: $colorPrimary;
+        text-decoration: none;
+    }
+}
