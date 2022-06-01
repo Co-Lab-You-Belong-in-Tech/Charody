@@ -2,12 +2,13 @@
 .hero{
     height: 80vh;
     overflow: hidden;
+    text-align: start;
     div{
         position: absolute;
         display: flex;
         flex-direction: column;
         margin: 0 50vw 0 20vw;
-        align-items: center;
+        align-items: flex-start;
         color: white;
         h2{
             display: flex;
