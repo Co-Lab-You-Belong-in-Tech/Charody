@@ -7,6 +7,9 @@ $navLinkColor: black;
     justify-content: center;
     align-items: center;
     margin-bottom: 5vh;
+    &>img{
+        max-width: 25vw;
+    }
     &>div{
         display: flex;
         flex-direction: column;
