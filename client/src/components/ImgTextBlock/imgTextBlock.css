@@ -74,4 +74,31 @@
   border-radius: 50%;
   left: -64px;
 }
+
+.imgTextBlock div figure figcaption {
+  margin-left: 40px;
+}
+
+.imgTextBlock div figure blockquote {
+  position: relative;
+}
+
+.imgTextBlock div figure blockquote:before, .imgTextBlock div figure blockquote:after {
+  position: absolute;
+  color: black;
+  font-size: 80px;
+}
+
+.imgTextBlock div figure blockquote:before {
+  font-family: sans-serif;
+  content: "\201C";
+  left: -40px;
+  top: -24px;
+}
+
+.imgTextBlock div figure blockquote:after {
+  font-family: sans-serif;
+  content: "\201D";
+  right: -8px;
+}
 /*# sourceMappingURL=imgTextBlock.css.map */

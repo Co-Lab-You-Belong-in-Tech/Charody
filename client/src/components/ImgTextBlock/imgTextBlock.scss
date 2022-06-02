@@ -39,5 +39,30 @@
                 }
             }
         }
+        figure{
+            figcaption{
+                margin-left: 40px;
+            }
+            // blockquote oversized quotation marks
+            blockquote{
+                position: relative;
+                &:before, &:after {
+                    position: absolute;
+                    color: black;
+                    font-size: 80px;
+                }
+                &:before{
+                    font-family: sans-serif;
+                    content: "\201C";
+                    left: -40px;
+                    top: -24px;
+                }
+                &:after{
+                    font-family: sans-serif;
+                    content: "\201D";
+                    right: -8px;
+                }
+            }
+        }
     }
 }

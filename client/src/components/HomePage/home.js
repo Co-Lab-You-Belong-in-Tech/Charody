@@ -55,7 +55,7 @@ export default function Home() {
                 txt={() => {
                     return(
                         <figure>
-                            <p>"It was hard to get shelter to fit my physical needs and where my dog would be accepted.  So many volunteers through Charody offered to help us.  I stayed with one host for a few weeks and another for a month until I was able to find a new home after ours got burned from a wildfire."</p>
+                            <blockquote>It was hard to get shelter to fit my physical needs and where my dog would be accepted.  So many volunteers through Charody offered to help us.  I stayed with one host for a few weeks and another for a month until I was able to find a new home after ours got burned from a wildfire.</blockquote>
                             <figcaption>-Sarah C.</figcaption>
                         </figure>
                     )
