@@ -19,13 +19,10 @@ export default function Login(){
             setUser(user)
             if(params.get("redirect") === "true") {
                 history.goBack()
-                console.log('wow')
             } else {
-                console.log('asdf')
-                if(res.isOffical) {
+                if(user.isOffical) {
                     history.push("/search")
                 } else {
-                    console.log('zxcvzxcv')
                     history.push("/editProfile")
                 }
             }

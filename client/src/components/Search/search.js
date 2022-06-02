@@ -19,6 +19,7 @@ export default function Search(){
         const searchCriteria = {
             zipcode: parseInt(fromZip),
             radius: parseInt(miles),
+            allowKids: kidsFilter,
             allowsCats: catsFilter,
             allowsDogs: dogsFilter,
             noStairs: stairsFilter,

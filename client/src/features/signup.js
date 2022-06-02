@@ -16,7 +16,6 @@ const signupSlice = createSlice({
             },
             days: '',
             hosting: false,
-            type: '',
         }
     },
     reducers: {

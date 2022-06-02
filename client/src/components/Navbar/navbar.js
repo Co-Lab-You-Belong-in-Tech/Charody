@@ -15,26 +15,26 @@ export default function Navbar() {
             <div>
                 <NavLink className='navLink' to='/aboutUs'>About Us</NavLink>
                 {/* homeownerNav */}
-                {auth.user.type == 'homeowner' ? (
+                {auth.user.isOfficial === false  ? (
                     <Fragment>
                         <NavLink className='navLink' to='/editProfile'>Profile</NavLink>
                     </Fragment>
                 ) : ''}
                 {/* officialNav */}
-                {auth.user.type == 'official' ? (
+                {auth.user.isOfficial === true ? (
                     <Fragment>
                         <NavLink className='navLink' to='/search'>Search</NavLink>
                     </Fragment>
                 ) : ''}
                 {/* login/logout */}
-                {auth.user ? (
+                {!auth.user._id ? (
                     <Fragment>
                         <NavLink className='navLink buttonColored secondary' to='/login'>Login</NavLink>
                         <NavLink className='navLink buttonColored' to='/signUp/homeowner'>Sign Up</NavLink>
                     </Fragment>
                 ) : (
                     <Fragment>
-                        <button className='buttonText' onClick={e => auth.signout()}>Logout</button>
+                        <button className='buttonText' onClick={auth.signOut}>Logout</button>
                     </Fragment>
                 ) }
                 

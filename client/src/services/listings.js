@@ -5,6 +5,7 @@ import { apiUrl } from '../utils/apiUrl.js';
  * @typedef Listing
  * @type {object}
  * @property {number} zipcode - must be an integer
+ * @property {boolean} allowsKids
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
  * @property {boolean} noStairs - is stair climbing required to live in the home
@@ -16,6 +17,7 @@ import { apiUrl } from '../utils/apiUrl.js';
  * @typedef SearchCriteria
  * @property {number} zipcode
  * @property {number} radius
+ * @property {boolean} allowsKids
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
  * @property {boolean} noStairs
