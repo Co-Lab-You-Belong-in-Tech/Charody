@@ -43,6 +43,65 @@
 }
 
 .imgTextBlock div ul > * {
-  margin-bottom: .5rem;
+  margin-bottom: 56px;
+}
+
+.imgTextBlock div ul.checked > * {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.imgTextBlock div ul.checked > *:before {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  content: "\2713";
+  font-size: 28px;
+  font-weight: 900;
+  height: 48px;
+  width: 48px;
+  color: white;
+  background-color: #4bd37b;
+  border-radius: 50%;
+  left: -64px;
+}
+
+.imgTextBlock div figure figcaption {
+  margin-left: 40px;
+}
+
+.imgTextBlock div figure blockquote {
+  position: relative;
+}
+
+.imgTextBlock div figure blockquote:before, .imgTextBlock div figure blockquote:after {
+  position: absolute;
+  color: black;
+  font-size: 80px;
+}
+
+.imgTextBlock div figure blockquote:before {
+  font-family: sans-serif;
+  content: "\201C";
+  left: -40px;
+  top: -24px;
+}
+
+.imgTextBlock div figure blockquote:after {
+  font-family: sans-serif;
+  content: "\201D";
+  right: -8px;
 }
 /*# sourceMappingURL=imgTextBlock.css.map */

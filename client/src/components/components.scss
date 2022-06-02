@@ -8,6 +8,7 @@ $buttonSecondary: #4BD37B;
     padding: .5rem .8rem;
     border: rgba(0, 0, 0, 0) solid 1.5px;
     transition: 200ms;
+    border-radius: 5px;
     &:hover{
         background-color: rgba(0, 0, 0, .5);
     }
@@ -19,6 +20,7 @@ $buttonSecondary: #4BD37B;
     padding: .5rem .8rem;
     transition: 200ms;
     text-decoration: none;
+    border-radius: 5px;
     &:hover{
         border-color: $button-bg;
         background-color: rgba(0, 0, 0, 0);

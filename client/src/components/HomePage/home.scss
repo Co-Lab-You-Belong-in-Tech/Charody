@@ -6,7 +6,7 @@ $sectionColorSecondary: #DDF4FF26;
             background-color: $sectionColorSecondary;
         }
         &:nth-child(even){
-            // background-color: $sectionColor;
+            background-color: $sectionColor;
         }
     }
 }
@@ -15,11 +15,16 @@ $sectionColorSecondary: #DDF4FF26;
     height: 80vh;
     overflow: hidden;
     text-align: start;
+    img{
+        width: 100%;
+    }
     div{
+        background: linear-gradient(360deg, #000000 -60.12%, rgba(0, 0, 0, 0) 91.33%);
+        width: 100%;
         position: absolute;
         display: flex;
         flex-direction: column;
-        margin: 0 50vw 0 20vw;
+        padding: 0 50vw 0 20vw;
         align-items: flex-start;
         color: white;
         h2{
@@ -29,6 +34,7 @@ $sectionColorSecondary: #DDF4FF26;
     }
 }
 .howItWorks{
+    padding: 1rem 0;
     &>*{ margin: 7vh 0; }
     .cards{
         &>div{

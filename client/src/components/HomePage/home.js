@@ -7,8 +7,8 @@ import './home.css'
 import '../components.css'
 // image imports
 import heroSection from '../../static/images/Hero section.jpeg'
-import step1 from '../../static/images/Step 1 fill info.png'
-import step2 from '../../static/images/Step 2 contact.png'
+import step1 from '../../static/images/Step 1 pic.png'
+import step2 from '../../static/images/step 2 pic.png'
 import step3 from '../../static/images/Step 3 host.png'
 
 import impactYouMake from '../../static/images/Dog mom.jpg'
@@ -55,7 +55,7 @@ export default function Home() {
                 txt={() => {
                     return(
                         <figure>
-                            <p>"It was hard to get shelter to fit my physical needs and where my dog would be accepted.  So many volunteers through Charody offered to help us.  I stayed with one host for a few weeks and another for a month until I was able to find a new home after ours got burned from a wildfire."</p>
+                            <blockquote>It was hard to get shelter to fit my physical needs and where my dog would be accepted.  So many volunteers through Charody offered to help us.  I stayed with one host for a few weeks and another for a month until I was able to find a new home after ours got burned from a wildfire.</blockquote>
                             <figcaption>-Sarah C.</figcaption>
                         </figure>
                     )
@@ -67,7 +67,7 @@ export default function Home() {
                 title='About your guests'
                 txt={() => {
                     return(
-                        <ul>
+                        <ul className='checked'>
                             <li>Verified identity and victim of a natural disaster.</li>
                             <li>Will be assigned and in touch with a caseworker.</li>
                             <li>Will not get your contact information.</li>
@@ -83,10 +83,10 @@ export default function Home() {
                 txt={() => {
                     return(
                         <div>
-                            <ul>
+                            <ul className='checked'>
                                 <li>Help people transition back to their lives.</li>
                                 <li>Build relationships with officials and guests.</li>
-                                <li>Housing insurance during guest stays.</li>
+                                <li>Make impact and be a part of a social cause.</li>
                             </ul>
                             <Link className='buttonColored' to='/signUp/homeowner'>Be a Host</Link>
                         </div>

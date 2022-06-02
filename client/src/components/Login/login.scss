@@ -9,13 +9,16 @@
         flex-direction: column;
         height: 70vh;
         justify-content: space-around;
-        img{ height: 50vh; }
+        img{ width: 380px; }
+        border-right: solid rgba(123, 123, 123, 1) 1px;
     }
     form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 30vw;
+        height: 50vh;
+        margin-left: 40px;
         &>*{
             margin-bottom: .5rem;
             padding: .5rem .7rem;

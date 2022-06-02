@@ -6,6 +6,7 @@
   border: rgba(0, 0, 0, 0) solid 1.5px;
   -webkit-transition: 200ms;
   transition: 200ms;
+  border-radius: 5px;
 }
 
 .grayButton:hover {
@@ -20,6 +21,7 @@
   -webkit-transition: 200ms;
   transition: 200ms;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .buttonColored:hover {
