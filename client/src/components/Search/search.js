@@ -14,12 +14,13 @@ export default function Search(){
     const [catsFilter, setCatsFilter] = useState(false)
     const [stairsFilter, setStairsFilter] = useState(false)
     const [page, setPage] = useState(1)
+    const [totalMatched, setTotalMatch] = useState(0)
 
     const fetchSearchResults = () => {
         const searchCriteria = {
             zipcode: parseInt(fromZip),
             radius: parseInt(miles),
-            allowKids: kidsFilter,
+            allowsKids: kidsFilter,
             allowsCats: catsFilter,
             allowsDogs: dogsFilter,
             noStairs: stairsFilter,
@@ -30,6 +31,7 @@ export default function Search(){
             .then(res => {
                 console.log(res)
                 setData(res.results)
+                setTotalMatch(res.totalMatched)
             }).catch(e => console.log(e))
 
     }
@@ -88,7 +90,7 @@ export default function Search(){
             </div>
             <div className='searchRightCol'>
                 <h2>Search Results</h2>
-                <p>We found <b>{'#'} results</b> based on your filters.</p>
+                <p>We found <b>{'' + totalMatched} results</b> based on your filters.</p>
                 <div className='userCards'>{cards}</div>
             </div>
         </div>

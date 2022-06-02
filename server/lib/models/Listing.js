@@ -106,7 +106,7 @@ class Listing {
     const totalMatched = await listings.countDocuments(query);
     return {
       results,
-      totalCount: totalMatched
+      totalMatched
     };
   }
 }
