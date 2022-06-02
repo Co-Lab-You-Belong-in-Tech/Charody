@@ -18,7 +18,25 @@
             list-style: none;
             font-size: 1.25rem;
             &>*{
-                margin-bottom: .5rem;
+                margin-bottom: 56px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                &:before{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    content: "\2713";
+                    font-size: 28px;
+                    font-weight: 900;
+                    height: 48px;
+                    width: 48px;
+                    color: white;
+                    background-color: rgba(75, 211, 123, 1);
+                    border-radius: 50%;
+                    left: -64px;
+                }
             }
         }
     }

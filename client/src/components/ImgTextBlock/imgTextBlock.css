@@ -43,6 +43,35 @@
 }
 
 .imgTextBlock div ul > * {
-  margin-bottom: .5rem;
+  margin-bottom: 56px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.imgTextBlock div ul > *:before {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  content: "\2713";
+  font-size: 28px;
+  font-weight: 900;
+  height: 48px;
+  width: 48px;
+  color: white;
+  background-color: #4bd37b;
+  border-radius: 50%;
+  left: -64px;
 }
 /*# sourceMappingURL=imgTextBlock.css.map */
