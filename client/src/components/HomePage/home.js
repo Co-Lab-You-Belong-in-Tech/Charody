@@ -7,8 +7,8 @@ import './home.css'
 import '../components.css'
 // image imports
 import heroSection from '../../static/images/Hero section.jpeg'
-import step1 from '../../static/images/Step 1 fill info.png'
-import step2 from '../../static/images/Step 2 contact.png'
+import step1 from '../../static/images/Step 1 pic.png'
+import step2 from '../../static/images/step 2 pic.png'
 import step3 from '../../static/images/Step 3 host.png'
 
 import impactYouMake from '../../static/images/Dog mom.jpg'
@@ -86,7 +86,7 @@ export default function Home() {
                             <ul>
                                 <li>Help people transition back to their lives.</li>
                                 <li>Build relationships with officials and guests.</li>
-                                <li>Housing insurance during guest stays.</li>
+                                <li>Make impact and be a part of a social cause.</li>
                             </ul>
                             <Link className='buttonColored' to='/signUp/homeowner'>Be a Host</Link>
                         </div>

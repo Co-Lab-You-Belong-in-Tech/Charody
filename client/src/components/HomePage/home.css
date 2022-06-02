@@ -2,10 +2,18 @@
   background-color: #DDF4FF26;
 }
 
+.homePage > div:nth-child(even) {
+  background-color: #F7FCFD;
+}
+
 .hero {
   height: 80vh;
   overflow: hidden;
   text-align: start;
+}
+
+.hero img {
+  width: 100%;
 }
 
 .hero div {
@@ -31,6 +39,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.howItWorks {
+  padding: 1rem 0;
 }
 
 .howItWorks > * {

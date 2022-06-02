@@ -6,7 +6,7 @@ $sectionColorSecondary: #DDF4FF26;
             background-color: $sectionColorSecondary;
         }
         &:nth-child(even){
-            // background-color: $sectionColor;
+            background-color: $sectionColor;
         }
     }
 }
@@ -15,6 +15,9 @@ $sectionColorSecondary: #DDF4FF26;
     height: 80vh;
     overflow: hidden;
     text-align: start;
+    img{
+        width: 100%;
+    }
     div{
         position: absolute;
         display: flex;
@@ -29,6 +32,7 @@ $sectionColorSecondary: #DDF4FF26;
     }
 }
 .howItWorks{
+    padding: 1rem 0;
     &>*{ margin: 7vh 0; }
     .cards{
         &>div{
