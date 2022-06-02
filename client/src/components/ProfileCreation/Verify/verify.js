@@ -6,8 +6,10 @@ import Info from '../Info/info'
 import Home from '../Home/home'
 import { signupStateToPostData } from '../../../utils/mungeProfileData.js'
 import { upsertProfile } from '../../../services/profiles.js'
+import { useHistory } from 'react-router-dom'
 
 export default function Verify() {
+    const history = useHistory()
     const data = useSelector(state => state.signup.value)
     return(
         <div className='verifyForm'>
@@ -18,7 +20,7 @@ export default function Verify() {
                 console.log(mungedData)
                 console.log('this ran')
                 upsertProfile(mungedData)
-                // TODO: redirect to a ty page or something
+                history.push("/signupConfirmation")
             }}>Done</button>
         </div>
     )
