@@ -44,6 +44,9 @@
 
 .imgTextBlock div ul > * {
   margin-bottom: 56px;
+}
+
+.imgTextBlock div ul.checked > * {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,7 +56,7 @@
           align-items: center;
 }
 
-.imgTextBlock div ul > *:before {
+.imgTextBlock div ul.checked > *:before {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;

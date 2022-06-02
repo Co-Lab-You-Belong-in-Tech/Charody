@@ -67,7 +67,7 @@ export default function Home() {
                 title='About your guests'
                 txt={() => {
                     return(
-                        <ul>
+                        <ul className='checked'>
                             <li>Verified identity and victim of a natural disaster.</li>
                             <li>Will be assigned and in touch with a caseworker.</li>
                             <li>Will not get your contact information.</li>
@@ -83,7 +83,7 @@ export default function Home() {
                 txt={() => {
                     return(
                         <div>
-                            <ul>
+                            <ul className='checked'>
                                 <li>Help people transition back to their lives.</li>
                                 <li>Build relationships with officials and guests.</li>
                                 <li>Make impact and be a part of a social cause.</li>

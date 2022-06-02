@@ -14,11 +14,12 @@
         img{
             max-width: 40vw;
         }
+        // big green check circles
         ul{
             list-style: none;
             font-size: 1.25rem;
-            &>*{
-                margin-bottom: 56px;
+            &>*{  margin-bottom: 56px; }
+            &.checked>*{
                 position: relative;
                 display: flex;
                 align-items: center;
