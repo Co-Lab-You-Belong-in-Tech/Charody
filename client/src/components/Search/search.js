@@ -28,7 +28,7 @@ export default function Search(){
         searchListings(searchCriteria, ac.signal)
             .then(res => {
                 console.log(res)
-                setData(res)
+                setData(res.results)
             }).catch(e => console.log(e))
 
     }
