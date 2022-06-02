@@ -1,6 +1,6 @@
 const User = require('./User.js');
 
-/** @type {require('mongodb').Collection} */
+/** @type {import('mongodb').Collection} */
 let listings;
 
 class Listing {
@@ -94,7 +94,7 @@ class Listing {
 
     // Make the query ignorant of false values
     Object.keys(rest).map(key => {
-      if(rest[key]) {
+      if (rest[key]) {
         query[key] = true;
       }
     });
@@ -102,7 +102,12 @@ class Listing {
     console.log('asdfasdfasdfasdf');
     console.log(query);
 
-    return await listings.find(query).skip(count * (page - 1)).limit(count).toArray();
+    const results = await listings.find(query).skip(count * (page - 1)).limit(count).toArray();
+    const totalMatched = await listings.countDocuments(query);
+    return {
+      results,
+      totalMatched
+    };
   }
 }
 

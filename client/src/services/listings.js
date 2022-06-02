@@ -1,7 +1,6 @@
 import { apiUrl } from '../utils/apiUrl.js';
 
 /**
- * 
  * @typedef Listing
  * @type {object}
  * @property {number} zipcode - must be an integer
@@ -11,6 +10,13 @@ import { apiUrl } from '../utils/apiUrl.js';
  * @property {boolean} noStairs - is stair climbing required to live in the home
  * @property {number} numberOfDaysAvailable - must be an integer
  * @property {boolean} currentlyAvailable - is the home owner currently accepting refugees
+ */
+
+/**
+ * @typedef SearchListingsReturnType
+ * @type {object}
+ * @property {Listing[]} results
+ * @property {number} totalMatched
  */
 
 /**
@@ -29,7 +35,7 @@ import { apiUrl } from '../utils/apiUrl.js';
  * Finds all listings that match the search criteria
  * @param {SearchCriteria} searchCriteria
  * @param {AbortSignal} signal
- * @returns {[Listing] | Error}
+ * @returns {SearchListingsReturnType | Error}
  */
 export const searchListings = async (searchCriteria, signal) => {
   const res = await fetch(`${apiUrl}/listings/search`, {
@@ -44,5 +50,8 @@ export const searchListings = async (searchCriteria, signal) => {
   });
   const listings = await res.json();
   console.log(listings)
-  return Array.isArray(listings) ? listings : [];
+  return Array.isArray(listings.results) ? listings : {
+    results: [],
+    totalMatched: 0
+  };
 };
