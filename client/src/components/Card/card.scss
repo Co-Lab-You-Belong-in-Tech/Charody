@@ -1,0 +1,9 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    &>div{
+        display: flex;
+        flex-direction: column;
+    }
+}

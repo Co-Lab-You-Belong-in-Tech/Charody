@@ -1,5 +1,6 @@
 $button-color: white;
 $button-bg: #26B4F9;
+$buttonSecondary: #4BD37B;
 .grayButton{
     text-decoration: none;
     background-color: $button-bg;
@@ -7,6 +8,7 @@ $button-bg: #26B4F9;
     padding: .5rem .8rem;
     border: rgba(0, 0, 0, 0) solid 1.5px;
     transition: 200ms;
+    border-radius: 5px;
     &:hover{
         background-color: rgba(0, 0, 0, .5);
     }
@@ -18,6 +20,7 @@ $button-bg: #26B4F9;
     padding: .5rem .8rem;
     transition: 200ms;
     text-decoration: none;
+    border-radius: 5px;
     &:hover{
         border-color: $button-bg;
         background-color: rgba(0, 0, 0, 0);
@@ -30,6 +33,14 @@ $button-bg: #26B4F9;
         &:hover{
             background-color: $button-bg;
             color: $button-color !important;
+        }
+    }
+    &.secondary{
+        background-color: $buttonSecondary;
+        &:hover{
+            color: $buttonSecondary !important;
+            background-color: $button-color;
+            border-color: $buttonSecondary;
         }
     }
     &.full:hover{
@@ -51,5 +62,16 @@ $button-bg: #26B4F9;
         bottom: 0;
         left: 0;
         right: 0;
+    }
+}
+
+// button text
+.buttonText{
+    border: none;
+    background: none;
+    font-size: 1rem;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
     }
 }

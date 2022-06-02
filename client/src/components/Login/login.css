@@ -29,10 +29,11 @@
   height: 70vh;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border-right: solid #7b7b7b 1px;
 }
 
 .login .loginImage img {
-  height: 50vh;
+  width: 380px;
 }
 
 .login form {
@@ -47,6 +48,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 30vw;
+  height: 50vh;
+  margin-left: 40px;
 }
 
 .login form > * {

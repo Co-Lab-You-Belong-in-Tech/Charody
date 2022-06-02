@@ -5,14 +5,14 @@ export default function ImgTextBlock(props){
         return(
             <div>
                 <div>{txt()}</div>
-                <img src={img}></img>
+                <img src={img} alt=''></img>
             </div>
         )
     }
     const imgLeft = () => {
         return(
             <div>
-                <img src={img}></img>
+                <img src={img} alt=''></img>
                 <div>{txt()}</div>
             </div>
         )

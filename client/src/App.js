@@ -9,6 +9,7 @@ import Footer from './components/Footer/footer'
 import Home from './components/HomePage/home'
 import AboutUs from './components/AboutUs/aboutUs'
 import SignUp from './components/SignUp/signUp'
+import SignUpConfirmation from './components/SignUpConfirmation/SignUpConfirmation';
 import Login from './components/Login/login'
 import ProfileCreation from './components/ProfileCreation/ProfileCreation';
 import EditProfile from './components/EditProfile/editProfile';
@@ -30,12 +31,13 @@ function App() {
           <Route exact path="/" component={Home}/>
           <Route path='/aboutUs' component={AboutUs}/>
           <Route path='/signUp/:type' component={SignUp}/>
+          <Route path='/signupConfirmation' component={SignUpConfirmation}/>
           <Route path='/login' component={Login}/>
           <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
           <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
-          <OfficialRoute path='/search'> <Search/> </OfficialRoute>
+          {/* <OfficialRoute path='/search'> <Search/> </OfficialRoute> */}
+          <Route path='/search' component={Search}></Route>
           <Route path='/forgotPassword' component={ForgotPassword}/>
-          <Footer/>
         </div>
       </AuthProvider>
     </Router>

@@ -15,6 +15,10 @@
   margin-bottom: 5vh;
 }
 
+.profileCreation > img {
+  max-width: 25vw;
+}
+
 .profileCreation > div {
   display: -webkit-box;
   display: -ms-flexbox;

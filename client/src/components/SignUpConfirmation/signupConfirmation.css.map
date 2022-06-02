@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,mBAAmB,CAAA;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EAInB,OAAO,EAAE,MAAM;CAKlB;;AAZD,AAII,mBAJe,GAIb,GAAG,CAAA;EACD,KAAK,EAAE,IAAI;CACd;;AANL,AAQI,mBARe,GAQb,iBAAiB,CAAA;EACf,KAAK,EAVE,OAAO;EAWd,eAAe,EAAE,IAAI;CACxB",
+    "sources": [
+        "signupConfirmation.scss"
+    ],
+    "names": [],
+    "file": "signupConfirmation.css"
+}

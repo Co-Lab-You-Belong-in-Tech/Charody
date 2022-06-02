@@ -6,6 +6,7 @@
   border: rgba(0, 0, 0, 0) solid 1.5px;
   -webkit-transition: 200ms;
   transition: 200ms;
+  border-radius: 5px;
 }
 
 .grayButton:hover {
@@ -20,6 +21,7 @@
   -webkit-transition: 200ms;
   transition: 200ms;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .buttonColored:hover {
@@ -37,6 +39,16 @@
 .buttonColored.invert:hover {
   background-color: #26B4F9;
   color: white !important;
+}
+
+.buttonColored.secondary {
+  background-color: #4BD37B;
+}
+
+.buttonColored.secondary:hover {
+  color: #4BD37B !important;
+  background-color: white;
+  border-color: #4BD37B;
 }
 
 .buttonColored.full:hover {
@@ -62,5 +74,16 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.buttonText {
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.buttonText:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=components.css.map */

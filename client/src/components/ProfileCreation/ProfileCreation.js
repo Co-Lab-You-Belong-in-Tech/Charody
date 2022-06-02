@@ -8,12 +8,14 @@ import Info from './Info/info'
 import Home from './Home/home'
 import Verify from './Verify/verify'
 
+import ProfileCreationImg from '../../static/images/account sign up.jpg'
+
 export default function ProfileCreation(){
     const { url } = useRouteMatch()
     const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
     return(
         <div className='profileCreation'>
-            <img src='https://via.placeholder.com/400x350'></img>
+            <img src={ProfileCreationImg}></img>
             <div>
                 <h2>
                     Thank you for taking the step to volunteer!<br/>
