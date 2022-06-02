@@ -34,7 +34,6 @@ export default function SignUp(){
                 </div>
                 
             </div>
-            
             <div>
                 <div className='navLink'>
                     <NavLink className='navLink' activeStyle={activeStyle} to={`/signUp/homeowner`}>Homeowner</NavLink>
