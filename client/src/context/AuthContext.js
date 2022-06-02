@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState, useEffect, useCallback } from 'react';
-import { getUser, logIn, signUp as postSignUp } from '../services/users.js'
+import { getUser, logIn, logOut, signUp as postSignUp } from '../services/users.js'
 import { useHistory } from 'react-router-dom'
 
 const AuthContext = createContext();
@@ -33,13 +33,19 @@ const AuthProvider = ({ children }) => {
             history.push('/profileCreation/info')
         }
     }
+  }, [history])
 
-  }, [])
+  const signOut = useCallback(async () => {
+    await logOut();
+    setUser({})
+    history.push('/')
+  }, [history])
 
   const value = useMemo(
-    () => ({ user, setUser, signUp }),
-    [user],
+    () => ({ user, setUser, signUp, signOut }),
+    [user, setUser, signUp, signOut],
   );
+
   if (loading) {
     // This component will lose its state on page refreshes and manually entered URLs.
     // Adding this wait allows the user to be fetched before rendering any child

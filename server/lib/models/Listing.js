@@ -1,5 +1,6 @@
 const User = require('./User.js');
 
+/** @type {require('mongodb').Collection} */
 let listings;
 
 class Listing {
@@ -35,6 +36,7 @@ class Listing {
       phone,
       userId,
       zipcode,
+      allowKids,
       allowsCats,
       allowsDogs,
       noStairs,
@@ -52,6 +54,7 @@ class Listing {
         phone,
         userId,
         zipcode,
+        allowKids,
         allowsCats,
         allowsDogs,
         noStairs,
@@ -82,7 +85,7 @@ class Listing {
       ...rest
     } = searchCriteria;
 
-    count = count ? count : 20;
+    count = count ? count : 10;
     page = page ? page : 1;
 
     const query = {

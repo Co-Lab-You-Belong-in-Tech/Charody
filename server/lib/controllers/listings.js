@@ -12,6 +12,7 @@ const searchListingsBodySchema = {
   properties: {
     zipcode: { type: 'integer', minimum: 1, maximum: 99999 },
     radius: { type: 'number', exclusiveMinimum: 0, maximum: 500 },
+    allowsKids: { type: 'boolean' },
     allowsCats: { type: 'boolean' },
     allowsDogs: { type: 'boolean' },
     noStairs: { type: 'boolean' },
@@ -41,6 +42,7 @@ const postListingsBodySchema = {
     'lastName',
     'phone',
     'zipcode',
+    'allowsKids',
     'allowsCats',
     'allowsDogs',
     'noStairs',
