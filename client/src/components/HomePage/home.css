@@ -17,6 +17,9 @@
 }
 
 .hero div {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(-60.12%, #000000), color-stop(91.33%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(360deg, #000000 -60.12%, rgba(0, 0, 0, 0) 91.33%);
+  width: 100%;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,7 +28,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 50vw 0 20vw;
+  padding: 0 50vw 0 20vw;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
