@@ -12,7 +12,7 @@ import ProfileCreationImg from '../../static/images/account sign up.jpg'
 
 export default function ProfileCreation(){
     const { url } = useRouteMatch()
-    const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
+    const activeStyle = { color: '#26B4F9' }
     return(
         <div className='profileCreation'>
             <img src={ProfileCreationImg}></img>
