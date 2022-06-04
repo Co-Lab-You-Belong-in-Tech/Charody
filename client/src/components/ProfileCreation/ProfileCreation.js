@@ -12,7 +12,7 @@ import ProfileCreationImg from '../../static/images/account sign up.jpg'
 
 export default function ProfileCreation(){
     const { url } = useRouteMatch()
-    const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
+    const activeStyle = { color: '#26B4F9' }
     return(
         <div className='profileCreation'>
             <img src={ProfileCreationImg}></img>
@@ -23,8 +23,8 @@ export default function ProfileCreation(){
                 </h2>
                 <div>
                     <div className='navLink'>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Info</NavLink><div className='dash'/>
-                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home</NavLink><div className='dash'/>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Your Info</NavLink><div className='dash'/>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home Details</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/verify`} url={url}>Verify</NavLink>
                     </div>
                     <div className='form'>

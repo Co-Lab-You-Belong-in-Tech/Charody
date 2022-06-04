@@ -1,5 +1,5 @@
 $borderColor: #7B7B7B;
-$navLinkColor: #B4B4B4;
+$navLinkColor: rgba(105, 105, 105, 1);
 .editProfile{
     display: grid;
     margin: 0 20vw;
@@ -57,6 +57,7 @@ $navLinkColor: #B4B4B4;
         }
         label{
             display: flex;
+            color: rgba(105, 105, 105, 1);
             width: 100%;
             margin: 1rem 0;
             justify-content: space-between;

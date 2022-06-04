@@ -74,4 +74,12 @@
   width: 20vw;
   height: 100%;
 }
+
+.whyVolunteer > a.buttonColored {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 40px;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+}
 /*# sourceMappingURL=home.css.map */
