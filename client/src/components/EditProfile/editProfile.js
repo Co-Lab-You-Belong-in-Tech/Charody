@@ -12,7 +12,7 @@ import Home from '../ProfileCreation/Home/home'
 export default function EditProfile() {
     const { url } = useRouteMatch()
     const data = useSelector(state => state.signup.value)
-    const activeStyle = { color: 'black' }
+    const activeStyle = { color: '#26B4F9' }
     useEffect(() => {
         // obtains user data from db
         // dispatches user data to reduxStore
@@ -20,8 +20,8 @@ export default function EditProfile() {
     return(
         <div className='editProfile'>
             <div className='navLink'>
-                <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Edit Profile</NavLink>
-                <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home</NavLink>
+                <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Your Info</NavLink>
+                <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home Details</NavLink>
             </div>
             <div className='form'>
                 <Route path={`${url}/info`} component={Info}></Route>
