@@ -42,9 +42,10 @@ $navLinkColor: black;
                     display: flex;
                     justify-content: flex-end;
                     width: 100%;
+                    box-sizing: border-box;
                     font-size: 1rem;
                     padding: .4rem 0;
-                    text-align: center;
+                    padding-left: 1rem;
                     margin: .5rem 0;
                 }
                 label{
