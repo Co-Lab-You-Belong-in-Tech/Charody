@@ -23,7 +23,11 @@ export default function Login(){
                 if(user.isOfficial) {
                     history.push("/search")
                 } else {
-                    history.push("/editProfile")
+                    if(user.hasListing) {
+                        history.push("/editProfile")
+                    } else {
+                        history.push("/profileCreation/info")
+                    }
                 }
             }
         }

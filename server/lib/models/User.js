@@ -2,6 +2,8 @@ const Listing = require('./Listing.js');
 
 class User {
   client;
+
+  /** @type {import("mongodb").Collection} */
   users;
 
   static async injectDB(client) {
@@ -22,7 +24,11 @@ class User {
    * @returns {Object | null} Returns either a single user or nothing
    */
   static async getUser(email) {
-    return await this.users.findOne({ email });
+    const user = await this.users.findOne({ email });
+    console.log(user);
+    if(!user) return null;
+    user.hasListing = !!(await Listing.getListingsByUserId(user._id));
+    return user;
   }
 
   /**
@@ -87,6 +93,11 @@ class User {
       { $set: { isOfficial: true } },
     );
     return updateResponse;
+  }
+
+  static async getEmailForId(id) {
+    const { email } = await this.users.findOne({ _id: id });
+    return email;
   }
 }
 
