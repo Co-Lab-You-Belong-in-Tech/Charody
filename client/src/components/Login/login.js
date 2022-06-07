@@ -20,7 +20,7 @@ export default function Login(){
             if(params.get("redirect") === "true") {
                 history.goBack()
             } else {
-                if(user.isOffical) {
+                if(user.isOfficial) {
                     history.push("/search")
                 } else {
                     history.push("/editProfile")
