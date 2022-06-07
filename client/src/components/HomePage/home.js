@@ -36,15 +36,15 @@ export default function Home() {
                     <div>
                         <Card 
                             title='Step 1'
-                            txt='Create an account and fill basic personal and housing information.  Only disaster relief officials have access to this.'
+                            txt='Homeowners can create an account to fill basic personal and housing information. Edits can be made by logging in through the Charody site.'
                         />
                         <Card 
                             title='Step 2'
-                            txt='If a disaster occurs and shelter is needed, our partner organization will geolocate volunteers to contact.'
+                            txt='If a disaster occurs and housing is needed, verified partner organizations will be given access to search through Charody’s volunteer homeowners to contact. '
                         />
                         <Card 
                             title='Step 3'
-                            txt='Based on the information the partner organization shares of the victims, you can choose how many to host and for how long but not longer than 30 days.'
+                            txt='Based on the information the partner organization shares of the victims, homeowners can choose how many to host and for how long, but no longer than 30 days.'
                         />
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export default function Home() {
                 title='Why volunteer?'
                 txt={() => {
                     return(
-                        <div>
+                        <div className='whyVolunteer'>
                             <ul className='checked'>
                                 <li>Help people transition back to their lives.</li>
                                 <li>Build relationships with officials and guests.</li>

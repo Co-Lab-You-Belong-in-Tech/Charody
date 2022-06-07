@@ -35,8 +35,8 @@ function App() {
           <Route path='/login' component={Login}/>
           <PrivateRoute path='/profileCreation'><ProfileCreation/> </PrivateRoute>
           <PrivateRoute path='/editProfile'> <EditProfile/> </PrivateRoute>
-          {/* <OfficialRoute path='/search'> <Search/> </OfficialRoute> */}
-          <Route path='/search' component={Search}></Route>
+          <OfficialRoute path='/search'> <Search/> </OfficialRoute>
+          {/* <Route path='/test' component={ProfileCreation}></Route> */}
           <Route path='/forgotPassword' component={ForgotPassword}/>
         </div>
       </AuthProvider>

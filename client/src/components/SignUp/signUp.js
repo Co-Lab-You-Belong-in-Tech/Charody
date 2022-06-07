@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useAuth } from '../../context/AuthContext.js'
 
 export default function SignUp(){
-    const activeStyle = { borderBottom: 'solid #26B4F9 2px' }
+    const activeStyle = { borderBottom: 'solid #26B4F9 2px', color: 'black' }
     const { type } = useParams()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
