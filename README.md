@@ -1,5 +1,7 @@
 # Charody
 
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&style=plastic&up_message=online&url=https%3A%2F%2Fcharody.netlify.app%2F) [![GitHub issues](https://img.shields.io/github/issues/Co-Lab-You-Belong-in-Tech/Charody?style=plastic)](https://github.com/Co-Lab-You-Belong-in-Tech/Charody/issues) ![GitHub repo size](https://img.shields.io/github/repo-size/Co-Lab-You-Belong-in-Tech/Charody?style=plastic)
+
 ## Summary
 A product that helps connect disaster relief case managers (DRCM) to homeowners willing to offer temporary shelter to families evacuating CA Wildfires.
 
