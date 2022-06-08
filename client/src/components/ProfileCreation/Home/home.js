@@ -11,7 +11,7 @@ export default function Home(props){
     return(
         <form className='homeForm' onSubmit={e => {
             e.preventDefault()
-            history.push(`${url}/verify`)
+            history.push(`${url}/verifyID`)
         }}>
             <div>
                 <input type='checkbox' id='kids' checked={data.accessibility.kids} onChange={e => {

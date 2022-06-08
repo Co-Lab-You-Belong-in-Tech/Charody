@@ -1,0 +1,23 @@
+.verifyIDForm{
+    input{ display: none !important; }
+    .dropzone{
+        box-shadow: 3px 3px 13px rgba(105, 105, 105, 0.2);
+        padding: 2rem;
+        width: 100%;
+        &>*{ margin-bottom: 16px; }
+        svg{
+            width: 72px;
+            height: 72px;
+        }
+    }
+    .fileList{
+        &>*{
+            display: flex;
+            justify-content: space-between;
+        }
+        svg{
+            max-width: 1rem;
+            &:hover{ cursor: pointer; }
+        }
+    }
+}
