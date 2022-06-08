@@ -4,6 +4,7 @@ import '../../components.css'
 
 import Info from '../Info/info'
 import Home from '../Home/home'
+import VerifyID from '../VerifyID/verifyID'
 import { signupStateToPostData } from '../../../utils/mungeProfileData.js'
 import { upsertProfile } from '../../../services/profiles.js'
 import { useHistory } from 'react-router-dom'
@@ -15,6 +16,7 @@ export default function Verify() {
         <div className='verifyForm'>
             <Info/>
             <Home/>
+            <VerifyID/>
             <button className='buttonColored full done' onClick={e => {
                 const mungedData = signupStateToPostData(data);
                 console.log(mungedData)
