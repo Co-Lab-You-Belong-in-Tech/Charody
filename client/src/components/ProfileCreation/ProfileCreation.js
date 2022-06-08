@@ -7,6 +7,7 @@ import './profileCreation.css'
 import Info from './Info/info'
 import Home from './Home/home'
 import Verify from './Verify/verify'
+import VerifyID from './VerifyID/verifyID'
 
 import ProfileCreationImg from '../../static/images/account sign up.jpg'
 
@@ -25,11 +26,13 @@ export default function ProfileCreation(){
                     <div className='navLink'>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/info`} url={url}>Your Info</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/home`} url={url}>Home Details</NavLink><div className='dash'/>
+                        <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/verifyID`} url={url}>Verify ID</NavLink><div className='dash'/>
                         <NavLink className='navLink' activeStyle={activeStyle} to={`${url}/verify`} url={url}>Verify</NavLink>
                     </div>
                     <div className='form'>
                         <Route path={`${url}/info`}><Info url={url}/></Route>
                         <Route path={`${url}/home`}><Home url={url}/></Route>
+                        <Route path={`${url}/verifyID`}><VerifyID url={url}/></Route>
                         <Route path={`${url}/verify`} component={Verify}></Route>
                     </div>
                 </div>  
