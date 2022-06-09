@@ -9,13 +9,19 @@
             width: 72px;
             height: 72px;
         }
+        span{ color: rgba(38, 180, 249, 1); }
     }
-    .fileList{
-        &>*{
-            display: flex;
-            justify-content: space-between;
-        }
-        svg{
+    .reviewFile{
+        box-shadow: 3px 3px 13px rgba(105, 105, 105, 0.2);
+        padding: 2rem;
+        max-width: 100%;
+        max-height: 50vh;
+        img{ width: 100%; }
+    }
+    .delFile{
+        display: flex;
+        justify-content: space-between;
+        &>svg{
             max-width: 1rem;
             &:hover{ cursor: pointer; }
         }
