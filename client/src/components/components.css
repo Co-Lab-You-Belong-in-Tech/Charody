@@ -1,0 +1,89 @@
+.grayButton {
+  text-decoration: none;
+  background-color: #26B4F9;
+  color: white;
+  padding: .5rem .8rem;
+  border: rgba(0, 0, 0, 0) solid 1.5px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 5px;
+}
+
+.grayButton:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.buttonColored {
+  border: solid rgba(0, 0, 0, 0) 1.5px;
+  background-color: #26B4F9;
+  color: white !important;
+  padding: .5rem .8rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.buttonColored:hover {
+  border-color: #26B4F9;
+  background-color: rgba(0, 0, 0, 0);
+  color: #26B4F9 !important;
+}
+
+.buttonColored.invert {
+  border-color: #26B4F9;
+  background-color: white;
+  color: #26B4F9 !important;
+}
+
+.buttonColored.invert:hover {
+  background-color: #26B4F9;
+  color: white !important;
+}
+
+.buttonColored.secondary {
+  background-color: #4BD37B;
+}
+
+.buttonColored.secondary:hover {
+  color: #4BD37B !important;
+  background-color: white;
+  border-color: #4BD37B;
+}
+
+.buttonColored.full:hover {
+  border-color: #26B4F9;
+  background-color: white;
+  color: #26B4F9 !important;
+}
+
+.overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay div, .overlay img {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.buttonText {
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.buttonText:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=components.css.map */

@@ -1,0 +1,38 @@
+.navbar {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+.navbar img {
+  max-height: 2.5rem;
+}
+
+.navbar .navLink {
+  margin-right: 1rem;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.navbar .navLink:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=navbar.css.map */

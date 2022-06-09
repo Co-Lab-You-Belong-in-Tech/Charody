@@ -1,0 +1,100 @@
+$borderColor: #7B7B7B;
+$navLinkColor: rgba(105, 105, 105, 1);
+.editProfile{
+    display: grid;
+    margin: 0 20vw;
+    grid-template-columns: 1fr 5fr;
+    border-top: solid $borderColor 1px;
+    .navLink{
+        display: flex;
+        flex-direction: column;
+        border-right: solid $borderColor 1px;
+        margin-right: 1rem;
+        &>*{
+            color: $navLinkColor;
+            text-decoration: none;
+            width: 100%;
+            border-bottom: solid $borderColor 1px;
+            padding: 1rem 0;
+        }
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        margin: 1rem 0;
+        .infoForm{
+            &>.formField{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &:before{
+                display: flex;
+                content: 'Edit Profile';
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            input:first-child{
+                margin-right: 1rem;
+            }
+        }
+        .homeForm{
+            &:before{
+                display: flex;
+                content: 'Home';
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .verifyIDForm{
+            &:before{
+                display: flex;
+                content: 'ID Verification';
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+        input{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1rem;
+            padding: .4rem 0;
+            text-align: center;
+            margin: .5rem 0;
+        }
+        label{
+            display: flex;
+            color: rgba(105, 105, 105, 1);
+            width: 100%;
+            margin: 1rem 0;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            &.forCheckbox:after{
+                position: absolute;
+                right: 0;
+                content: '';
+                height: 2rem;
+                width: 2rem;
+                border: black solid 1px;
+                border-radius: .3rem;
+            }
+        }
+        input[type=checkbox]{
+            display: none;
+            &:checked~label:after{
+                content: '\2713';
+                font-size: 1.6rem;
+                display: inline-block;
+                color: black;
+            }
+        }
+        button[type=submit]{
+            display: none;
+        }
+        button.done{
+            width: 35%;
+        }
+    }
+}

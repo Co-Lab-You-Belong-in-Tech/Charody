@@ -1,0 +1,65 @@
+.signUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>*{ margin: 1rem 0; }
+    &>div:nth-child(2){
+        background-color: rgba(221, 244, 255, 0.15);
+        height: 70vh;
+    }
+    .signUpImg{
+        position: relative;
+        img{ height: 70vh; }
+        div{
+            display: flex;
+            justify-content: center;
+            padding-top: 2rem;
+            background: linear-gradient(180deg, #1B1B1B 0%, rgba(27, 27, 27, 0.908451) 0.01%, rgba(27, 27, 27, 0) 57.81%);
+            color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    .img{
+        // object-fit: cover;
+        width: 20vw;
+        height: 70vh;
+    }
+    .navLink{
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        color: rgba(105, 105, 105, 1);
+        text-decoration: none;
+        transition: 200ms;
+        &>*{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 56px;
+        width: 30vw;
+        height: 50vh;
+        &>*{
+            margin-bottom: .5rem;
+            padding: .5rem .7rem;
+        }
+    }
+    .loginOptions{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}

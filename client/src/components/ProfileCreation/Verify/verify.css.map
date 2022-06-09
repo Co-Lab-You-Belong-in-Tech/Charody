@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,WADO,CACP,MAAM,AAAA,KAAK,CAAA;EACP,OAAO,EAAE,IAAI;CAChB;;AAHL,AAII,WAJO,CAIP,MAAM,AAAA,KAAK,CAAA;EACP,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "verify.scss"
+    ],
+    "names": [],
+    "file": "verify.css"
+}

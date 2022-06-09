@@ -1,0 +1,59 @@
+$sectionColor: #F7FCFD;
+$sectionColorSecondary: #DDF4FF26;
+.homePage{
+    &>div{
+        &:nth-child(odd){
+            background-color: $sectionColorSecondary;
+        }
+        &:nth-child(even){
+            background-color: $sectionColor;
+        }
+    }
+}
+// sections
+.hero{
+    height: 80vh;
+    overflow: hidden;
+    text-align: start;
+    img{
+        width: 100%;
+    }
+    div{
+        background: linear-gradient(360deg, #000000 -60.12%, rgba(0, 0, 0, 0) 91.33%);
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 0 50vw 0 20vw;
+        align-items: flex-start;
+        color: white;
+        h2{
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+}
+.howItWorks{
+    padding: 1rem 0;
+    &>*{ margin: 7vh 0; }
+    .cards{
+        &>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            &:first-child{
+                align-items: flex-end;
+                img{
+                    width: 20vw;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+.whyVolunteer>a.buttonColored{
+    align-self: flex-start;
+    margin-left: 40px;
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+}

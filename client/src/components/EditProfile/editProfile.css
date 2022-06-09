@@ -1,0 +1,143 @@
+.editProfile {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 20vw;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  border-top: solid #7B7B7B 1px;
+}
+
+.editProfile .navLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: solid #7B7B7B 1px;
+  margin-right: 1rem;
+}
+
+.editProfile .navLink > * {
+  color: dimgray;
+  text-decoration: none;
+  width: 100%;
+  border-bottom: solid #7B7B7B 1px;
+  padding: 1rem 0;
+}
+
+.editProfile .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
+  margin: 1rem 0;
+}
+
+.editProfile .form .infoForm > .formField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.editProfile .form .infoForm:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: 'Edit Profile';
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.editProfile .form .infoForm input:first-child {
+  margin-right: 1rem;
+}
+
+.editProfile .form .homeForm:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: 'Home';
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.editProfile .form .verifyIDForm:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: 'ID Verification';
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.editProfile .form input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 1rem;
+  padding: .4rem 0;
+  text-align: center;
+  margin: .5rem 0;
+}
+
+.editProfile .form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: dimgray;
+  width: 100%;
+  margin: 1rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.editProfile .form label.forCheckbox:after {
+  position: absolute;
+  right: 0;
+  content: '';
+  height: 2rem;
+  width: 2rem;
+  border: black solid 1px;
+  border-radius: .3rem;
+}
+
+.editProfile .form input[type=checkbox] {
+  display: none;
+}
+
+.editProfile .form input[type=checkbox]:checked ~ label:after {
+  content: '\2713';
+  font-size: 1.6rem;
+  display: inline-block;
+  color: black;
+}
+
+.editProfile .form button[type=submit] {
+  display: none;
+}
+
+.editProfile .form button.done {
+  width: 35%;
+}
+/*# sourceMappingURL=editProfile.css.map */

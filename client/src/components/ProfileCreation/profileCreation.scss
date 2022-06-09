@@ -1,0 +1,95 @@
+$submitColor: white;
+$submitBG: #26B4F9;
+$navLinkColor: black;
+.profileCreation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    &>img{
+        max-width: 25vw;
+    }
+    &>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 2vw;
+        width: 40vw;
+        &>div{
+            width: 25vw;
+        }
+        .navLink{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: $navLinkColor;
+            .dash{
+                content: '';
+                border: solid $navLinkColor .5px;
+                width: 1rem;
+            }
+        }
+        .form{
+            margin-top: 1rem;
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                input{
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    box-sizing: border-box;
+                    font-size: 1rem;
+                    padding: .4rem 0;
+                    padding-left: 1rem;
+                    margin: .5rem 0;
+                }
+                label{
+                    display: flex;
+                    width: 100%;
+                    margin: 1rem 0;
+                    align-items: center;
+                    position: relative;
+                    &.forCheckbox:after{
+                        position: absolute;
+                        right: 0;
+                        content: '';
+                        height: 2rem;
+                        width: 2rem;
+                        border: black solid 1px;
+                        border-radius: .3rem;
+                    }
+                }
+                input[type=checkbox]{
+                    display: none;
+                    &:checked~label:after{
+                        content: '\2713';
+                        font-size: 1.6rem;
+                        display: inline-block;
+                        color: black;
+                    }
+                }
+                button[type=submit]{
+                    color: $submitColor;
+                    background-color: $submitBG;
+                    border: solid $submitBG 1.5px;
+                    transition: 200ms;
+                    padding: .7rem;
+                    &:hover{
+                        background-color: $submitColor;
+                        color: $submitBG;
+                    }
+                }
+            }
+            .infoForm{
+                width: 100%;
+                label{ display: none; }
+                .usernameFields{ input{ margin-right: 1rem;} }
+            }
+        }
+    }
+}
