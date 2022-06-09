@@ -36,7 +36,7 @@ export default function Home() {
                     <div>
                         <Card 
                             title='Step 1'
-                            txt='Homeowners can create an account to fill basic personal and housing information. Edits can be made by logging in through the Charody site.'
+                            txt='Homeowners can create an account by providing basic personal information, home details, and ID and photo for verification. Edits can be made by logging in through the Charody site.'
                         />
                         <Card 
                             title='Step 2'

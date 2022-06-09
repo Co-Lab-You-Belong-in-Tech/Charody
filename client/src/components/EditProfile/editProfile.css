@@ -74,6 +74,15 @@
   margin-bottom: 1rem;
 }
 
+.editProfile .form .verifyIDForm:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: 'ID Verification';
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
 .editProfile .form input {
   display: -webkit-box;
   display: -ms-flexbox;

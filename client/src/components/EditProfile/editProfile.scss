@@ -47,6 +47,14 @@ $navLinkColor: rgba(105, 105, 105, 1);
                 margin-bottom: 1rem;
             }
         }
+        .verifyIDForm{
+            &:before{
+                display: flex;
+                content: 'ID Verification';
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
         input{
             display: flex;
             justify-content: flex-end;
