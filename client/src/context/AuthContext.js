@@ -12,8 +12,11 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const getCurrentUser = async () => {
       const res = await getUser();
-      if(res?.id) {
+      if(res?._id) {
         setUser(res);
+        if(!res.isOfficial && !res.hasListing) {
+          history.push('/profileCreation/info')
+        }
       }
       setLoading(false);
     };

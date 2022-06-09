@@ -36,14 +36,15 @@ class User {
    * @param {UserInfo} userInfo - The information of the user to add
    */
   static async addUser(userInfo) {
-    const { email, passwordHash, isOfficial } = userInfo;
+    const { email, passwordHash, verificationCode } = userInfo;
+    const document = { email, passwordHash };
+
+    if(verificationCode) {
+      document.verificationCode = verificationCode;
+    }
+
     try {
-      
-      const result = await this.users.insertOne({
-        email,
-        passwordHash,
-        isOfficial
-      }, { writeConcern: 'majority' });
+      const result = await this.users.insertOne(document, { writeConcern: 'majority' });
 
       return await this.users.findOne(
         { _id: result.insertedId },
@@ -98,6 +99,16 @@ class User {
   static async getEmailForId(id) {
     const { email } = await this.users.findOne({ _id: id });
     return email;
+  }
+
+  static async verifyEmail(email, verificationCode) {
+    const res = await this.user.updateOne({
+      email,
+      verificationCode
+    }, {
+      $unset: 'verificationCode'
+    });
+    return res.modifiedCount === 1;
   }
 }
 

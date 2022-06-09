@@ -88,6 +88,8 @@ module.exports = Router()
 
         const { zipcode, radius, ...query } = req.body;
         query.zipcodes = zipcodes.radius(zipcode, radius).map(zip => parseInt(zip));
+        // Prevents issues in testing when people input fake zipcodes
+        if(!query.zipcodes.length) query.zipcodes = [zipcode];
 
         const listings = await Listing.searchListingsByZipcode(query);
         console.log(listings);

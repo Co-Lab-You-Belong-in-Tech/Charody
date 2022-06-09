@@ -56,4 +56,14 @@ module.exports = Router()
       success: true,
       message: `Deleted user with email of ${req.user.email}`,
     });
+  })
+
+  .get('/verify', async (req, res) => {
+    const { email, code } = req.query;
+    const valid = await User.verifyEmail(email, code);
+    if(valid) {
+      res.redirect('/login');
+    } else {
+      res.status(401).json({ message: 'invalid code' });
+    }
   });
