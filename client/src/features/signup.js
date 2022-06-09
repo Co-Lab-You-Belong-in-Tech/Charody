@@ -16,7 +16,10 @@ const signupSlice = createSlice({
             },
             days: '',
             hosting: false,
-            files: [],
+            files: {
+                id: null,
+                photo: null
+            },
         }
     },
     reducers: {
