@@ -9,7 +9,6 @@ import Home from './Home/home'
 import Verify from './Verify/verify'
 import VerifyID from './VerifyID/verifyID'
 
-import ProfileCreationTextHeader from './profileCreationTextHeader'
 import ProfileCreationImg from '../../static/images/account sign up.jpg'
 
 export default function ProfileCreation(){
