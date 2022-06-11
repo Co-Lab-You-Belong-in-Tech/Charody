@@ -12,29 +12,27 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const getCurrentUser = async () => {
       const res = await getUser();
-      if(res?._id) {
+      if (res?._id) {
         setUser(res);
-        if(!res.isOfficial && !res.hasListing) {
+        if (!res.isOfficial && !res.hasListing) {
           history.push('/profileCreation/info')
         }
       }
       setLoading(false);
     };
     getCurrentUser();
-  }, []);
+  }, [history]);
 
   const signUp = useCallback(async (email, password, isOfficial) => {
     const res = await postSignUp(email, password, isOfficial)
     console.log('submitted')
     if (res?.email === email) { // TODO: Make the success response better
-        await logIn(email, password);
-        const loggedInUser = await getUser();
-        setUser(loggedInUser);
-        if(isOfficial) {
-            history.push('/search')
-        } else {
-            history.push('/profileCreation/info')
-        }
+      await logIn(email, password);
+      const loggedInUser = await getUser();
+      setUser(loggedInUser);
+      if (!isOfficial) {
+        history.push('/profileCreation/info')
+      }
     }
   }, [history])
 

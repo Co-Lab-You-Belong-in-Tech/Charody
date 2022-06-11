@@ -19,6 +19,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 import OfficialRoute from './components/PrivateRoute/OfficialRoute.js';
 import { AuthProvider } from './context/AuthContext.js';
 import VerifyID from './components/ProfileCreation/VerifyID/verifyID';
+import VerifyEmail from './components/VerifyEmail/VerifyEmail.js';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <OfficialRoute path='/search'> <Search/> </OfficialRoute>
           {/* <Route path='/test' component={ProfileCreation}></Route> */}
           <Route path='/forgotPassword' component={ForgotPassword}/>
+          <Route path='/verify' component={VerifyEmail}/>
         </div>
       </AuthProvider>
     </Router>

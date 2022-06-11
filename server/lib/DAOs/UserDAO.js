@@ -1,4 +1,4 @@
-const Listing = require('./Listing.js');
+const Listing = require('./ListingDAO.js');
 
 class User {
   client;
@@ -102,11 +102,12 @@ class User {
   }
 
   static async verifyEmail(email, verificationCode) {
-    const res = await this.user.updateOne({
+    const res = await this.users.updateOne({
       email,
       verificationCode
     }, {
-      $unset: 'verificationCode'
+      $unset: { 'verificationCode': '' },
+      $set: { isOfficial: true }
     });
     return res.modifiedCount === 1;
   }
