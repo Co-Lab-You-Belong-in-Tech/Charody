@@ -5,7 +5,7 @@ const ajv = new Ajv();
 const { postcodeValidator } = require('postcode-validator');
 const zipcodes = require('zipcodes');
 const authorize = require('../middleware/authorize.js');
-const Listing = require('../models/Listing.js');
+const ListingDAO = require('../DAOs/ListingDAO.js');
 
 const searchListingsBodySchema = {
   type: 'object',
@@ -66,7 +66,7 @@ module.exports = Router()
         }
 
         const listingInfo = { userId: ObjectId(req.user._id), ...req.body };
-        const result = await Listing.upsertListing(listingInfo);
+        const result = await ListingDAO.upsertListing(listingInfo);
         console.log(result);
 
         res.json({ ok: 'ok' });
@@ -91,7 +91,7 @@ module.exports = Router()
         // Prevents issues in testing when people input fake zipcodes
         if(!query.zipcodes.length) query.zipcodes = [zipcode];
 
-        const listings = await Listing.searchListingsByZipcode(query);
+        const listings = await ListingDAO.searchListingsByZipcode(query);
         console.log(listings);
         res.json(listings);
       } else {

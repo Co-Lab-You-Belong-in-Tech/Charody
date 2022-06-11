@@ -13,12 +13,16 @@ export default function SignUp(){
     const { type } = useParams()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [message, setMesssage] = useState("")
     const { signUp } = useAuth()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const isOfficial = type === 'official'
-        signUp(email, password, isOfficial)
+        await signUp(email, password, isOfficial)
+        if (isOfficial) {
+            setMesssage("Please check your inbox to verify your email address.")
+        }
     }
 
     return(
@@ -41,10 +45,10 @@ export default function SignUp(){
                     <NavLink className='navLink' activeStyle={activeStyle} to={`/signUp/official`}>Official</NavLink>
                 </div>
                 <form className='homeownerForm' onSubmit={handleSubmit}>
-                    <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
-                    <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
+                    <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)} />
+                    <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)} />
                     <button type='submit' className='buttonColored full'>Create an Account</button>
-                    <Route path={`/signUp/official`}><p>Please check your inbox to verify your email address.</p></Route>
+                    {message && <span>{message}</span>}
                 </form>
                 <div className='loginOptions'>
                     <Link to='/forgotPassword'>Forgot Password?</Link>
