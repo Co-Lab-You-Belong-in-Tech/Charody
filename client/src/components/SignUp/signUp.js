@@ -1,4 +1,5 @@
 import { NavLink, Link, useParams, useHistory } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './signUp.css'
 import '../components.css'
 
@@ -43,6 +44,7 @@ export default function SignUp(){
                     <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
                     <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
                     <button type='submit' className='buttonColored full'>Create an Account</button>
+                    <Route path={`/signUp/official`}><p>Please check your inbox to verify your email address.</p></Route>
                 </form>
                 <div className='loginOptions'>
                     <Link to='/forgotPassword'>Forgot Password?</Link>
