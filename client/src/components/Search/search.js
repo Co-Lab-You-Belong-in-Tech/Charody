@@ -26,14 +26,12 @@ export default function Search(){
             noStairs: stairsFilter,
             page: page
         }
-        const ac = new AbortController()
-        searchListings(searchCriteria, ac.signal)
+        searchListings(searchCriteria)
             .then(res => {
                 console.log(res)
                 setData(res.results)
                 setTotalMatch(res.totalMatched)
             }).catch(e => console.log(e))
-
     }
 
     const cards = data.map(obj => {

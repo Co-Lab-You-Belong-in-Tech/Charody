@@ -22,6 +22,8 @@
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.6.0",
+    "nanoid": "^3.x.x",
+    "nodemailer": "^6.7.5",
     "postcode-validator": "^3.6.6",
     "superagent": "^7.1.1",
     "zipcodes": "^8.0.0"

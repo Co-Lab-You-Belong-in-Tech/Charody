@@ -1,14 +1,16 @@
 # Charody
 
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&style=plastic&up_message=online&url=https%3A%2F%2Fcharody.netlify.app%2F) [![GitHub issues](https://img.shields.io/github/issues/Co-Lab-You-Belong-in-Tech/Charody?style=plastic)](https://github.com/Co-Lab-You-Belong-in-Tech/Charody/issues) ![GitHub repo size](https://img.shields.io/github/repo-size/Co-Lab-You-Belong-in-Tech/Charody?style=plastic)
+
 ## Summary
 A product that helps connect disaster relief case managers (DRCM) to homeowners willing to offer temporary shelter to families evacuating CA Wildfires.
 
 ## The Team
-Product Manager: Robert Mullins
-Designer: Haira Esther Kang
-Back-End Engineer: Dylan Floyd
-Front-End Engineer: Chaoneng Tan
-Mentor: Aniththa Uma
+Product Manager: Robert Mullins.  
+Designer: Haira Esther Kang.  
+Back-End Engineer: Dylan Floyd.   
+Front-End Engineer: Chaoneng Tan.  
+Mentor: Aniththa Uma.  
 
 ## Problem Background
 Our problem contains two users; Disaster relief case manager (DRCM) and homeowners willing to host evacuees of CA wildfires.
@@ -35,5 +37,7 @@ By creating a way for Disaster relief workers to see homeowners who’ve express
 * MongoDB
 
 ## Getting Started
-Site is hosted at: https://charody.netlify.app/
-Development Branch is hosted at: https://charody-staging.netlify.app/
+Site is hosted at: https://charody.netlify.app/.  
+Development Branch is hosted at: https://charody-staging.netlify.app/.  
+
+Check out the demo here: https://drive.google.com/file/d/1dINBgu4lPCRom1-fGnCBJdhkVPYJ6U6-/view?usp=sharing

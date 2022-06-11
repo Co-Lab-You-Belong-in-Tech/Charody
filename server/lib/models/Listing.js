@@ -1,15 +1,18 @@
+const { ObjectId } = require('mongodb');
 const User = require('./User.js');
 
-/** @type {import('mongodb').Collection} */
-let listings;
+
 
 class Listing {
+  /** @type {import('mongodb').Collection} */
+  listings;
+
   static async injectDB(conn) {
-    if (listings) {
+    if (this.listings) {
       return;
     }
     try {
-      listings = await conn.db(process.env.DB_NAMESPACE).collection('listings');
+      this.listings = await conn.db(process.env.DB_NAMESPACE).collection('listings');
     } catch (e) {
       console.error(`Unable to establish collection handles in user: ${e}`);
     }
@@ -22,7 +25,12 @@ class Listing {
    */
   static async getUsersListing(email) {
     const user = User.getUser(email);
-    return await listings.findOne({ userId: user._id });
+    return await this.listings.findOne({ userId: user._id });
+  }
+
+  static async getListingsByUserId(userId) {
+    console.log(userId);
+    return await this.listings.findOne({ userId: ObjectId(userId) });
   }
 
   /**
@@ -36,7 +44,7 @@ class Listing {
       phone,
       userId,
       zipcode,
-      allowKids,
+      allowsKids,
       allowsCats,
       allowsDogs,
       noStairs,
@@ -44,7 +52,7 @@ class Listing {
       currentlyAvailable
     } = listingInfo;
 
-    return await listings.updateOne({
+    return await this.listings.updateOne({
       userId
     },
     {
@@ -54,7 +62,7 @@ class Listing {
         phone,
         userId,
         zipcode,
-        allowKids,
+        allowsKids,
         allowsCats,
         allowsDogs,
         noStairs,
@@ -68,7 +76,7 @@ class Listing {
   }
 
   static async deleteListing(userId, session) {
-    await listings.deleteOne({ userId }, { session });
+    await this.listings.deleteOne({ userId }, { session });
   }
 
   /**
@@ -102,8 +110,22 @@ class Listing {
     console.log('asdfasdfasdfasdf');
     console.log(query);
 
-    const results = await listings.find(query).skip(count * (page - 1)).limit(count).toArray();
-    const totalMatched = await listings.countDocuments(query);
+    const results = await this.listings.aggregate([
+      {
+        '$match': query
+      }, {
+        '$limit': count
+      }, {
+        '$lookup': {
+          'from': 'users', 
+          'localField': 'userId', 
+          'foreignField': '_id', 
+          'as': 'email'
+        }
+      }
+    ]).toArray();
+    results.forEach(result => result.email = result.email[0].email);
+    const totalMatched = await this.listings.countDocuments(query);
     return {
       results,
       totalMatched
@@ -126,6 +148,7 @@ class Listing {
 /**
  * @typedef SearchCriteria
  * @property {number[]} zipcodes
+ * @property {boolean} allowsKids
  * @property {boolean} allowsCats
  * @property {boolean} allowsDogs
  * @property {boolean} noStairs
