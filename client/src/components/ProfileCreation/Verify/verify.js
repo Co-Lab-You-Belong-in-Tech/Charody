@@ -18,6 +18,7 @@ export default function Verify() {
             <Home/>
             <VerifyID/>
             <button className='buttonColored full done' onClick={e => {
+                console.log('--------verify data--------: ' + JSON.stringify(data, null, 4))
                 const mungedData = signupStateToPostData(data);
                 console.log(mungedData)
                 console.log('this ran')

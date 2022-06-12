@@ -43,7 +43,7 @@ const allowedTypesAndExtensions = {
   'image/png': ['.png']
 };
 
-const upload = multer({
+const customMulter = multer({
   storage: new GCSStorage(),
   limits: {
     fileSize: 52428800 // 50 MB
@@ -57,7 +57,6 @@ const upload = multer({
   }
 });
 
-const multerMiddleware = upload.fields([{ name: 'id', maxCount: 1 }, { name: 'selfie', maxCount: 1 }]);
 
 
-module.exports = multerMiddleware;
+module.exports = customMulter;

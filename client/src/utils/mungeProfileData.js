@@ -4,6 +4,8 @@
  * @returns {import('../services/profiles.js').UpsertProfileData}
  */
 export function signupStateToPostData(state) {
+  console.log("--------account data--------: \n"+JSON.stringify(state, null, 4))
+  console.log("--------files--------: \n"+JSON.stringify(state.files.id, null, 4))
   const {
     firstName,
     lastName,
