@@ -107,7 +107,6 @@ class Listing {
       }
     });
 
-    console.log('asdfasdfasdfasdf');
     console.log(query);
 
     const results = await this.listings.aggregate([

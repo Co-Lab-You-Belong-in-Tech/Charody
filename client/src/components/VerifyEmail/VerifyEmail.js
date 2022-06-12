@@ -30,7 +30,6 @@ export default function VerifyEmail(){
         setVerifyWasSuccessful(false)
         setLoaded(true)
         setLoading(false)
-        console.log(e)
       })
     }
 

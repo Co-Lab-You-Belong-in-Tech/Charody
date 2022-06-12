@@ -28,7 +28,6 @@ export default function Search(){
         }
         searchListings(searchCriteria)
             .then(res => {
-                console.log(res)
                 setData(res.results)
                 setTotalMatch(res.totalMatched)
             }).catch(e => console.log(e))

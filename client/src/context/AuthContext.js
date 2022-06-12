@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 
   const signUp = useCallback(async (email, password, isOfficial) => {
     const res = await postSignUp(email, password, isOfficial)
-    console.log('submitted')
     if (res?.email === email) { // TODO: Make the success response better
       await logIn(email, password);
       const loggedInUser = await getUser();

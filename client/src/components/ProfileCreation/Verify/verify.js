@@ -19,8 +19,6 @@ export default function Verify() {
             <VerifyID/>
             <button className='buttonColored full done' onClick={e => {
                 const mungedData = signupStateToPostData(data);
-                console.log(mungedData)
-                console.log('this ran')
                 upsertProfile(mungedData)
                 history.push("/signupConfirmation")
             }}>Done</button>
