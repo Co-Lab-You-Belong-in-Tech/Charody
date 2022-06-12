@@ -30,6 +30,5 @@ export const upsertProfile = async (profile) => {
     body: JSON.stringify(profile),
   });
   const json = await res.json()
-  console.log(json)
   return json
 };
