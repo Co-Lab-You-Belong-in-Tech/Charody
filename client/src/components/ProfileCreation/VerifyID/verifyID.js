@@ -110,7 +110,7 @@ export default function VerifyID(props){
                             }
                             dispatch(signup({ files: newFiles }))
                             try {
-                                await uploadId(file)
+                                await uploadSelfie(file)
                                 const newFiles = {
                                     ...data.files,
                                     photo: {
