@@ -1,5 +1,4 @@
-import { NavLink, Link, useParams, useHistory } from 'react-router-dom'
-import { Route } from 'react-router-dom'
+import { NavLink, Link, useParams } from 'react-router-dom'
 import './signUp.css'
 import '../components.css'
 
@@ -19,9 +18,15 @@ export default function SignUp(){
     const handleSubmit = async (e) => {
         e.preventDefault()
         const isOfficial = type === 'official'
-        await signUp(email, password, isOfficial)
-        if (isOfficial) {
-            setMesssage("Please check your inbox to verify your email address.")
+        try {
+            const res = await signUp(email, password, isOfficial)
+            if(res?.message) {
+                setMesssage(res.message)
+            } else if (isOfficial) {
+                setMesssage("Please check your inbox to verify your email address.")
+            }
+        } catch (e) {
+            setMesssage("An error occurred.")
         }
     }
 

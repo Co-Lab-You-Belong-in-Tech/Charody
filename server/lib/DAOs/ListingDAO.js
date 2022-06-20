@@ -93,11 +93,14 @@ class Listing {
       ...rest
     } = searchCriteria;
 
+    console.log(page);
+    console.log('count ' + count);
     count = count ? count : 10;
     page = page ? page : 1;
 
     const query = {
-      zipcode: { $in: zipcodes }
+      zipcode: { $in: zipcodes },
+      currentlyAvailable: true
     };
 
     // Make the query ignorant of false values
@@ -111,24 +114,58 @@ class Listing {
 
     const results = await this.listings.aggregate([
       {
-        '$match': query
+        $project: {
+          _id: 0
+        }
+      },
+      {
+        $match: query
       }, {
-        '$limit': count
+        $skip: (page - 1) * count
       }, {
-        '$lookup': {
-          'from': 'users', 
-          'localField': 'userId', 
-          'foreignField': '_id', 
-          'as': 'email'
+        $limit: count
+      }, {
+        $lookup: {
+          from: 'users', 
+          localField: 'userId', 
+          foreignField: '_id', 
+          as: 'email'
         }
       }
     ]).toArray();
-    results.forEach(result => result.email = result.email[0].email);
+    results.forEach(result => {
+      result.email = result.email[0].email;
+      delete result.userId;
+      delete result.currentlyAvailable;
+      return result;
+    });
     const totalMatched = await this.listings.countDocuments(query);
     return {
       results,
       totalMatched
     };
+  }
+
+  static async getRandomUnverifiedUser() {
+    const res = await this.listings.aggregate([
+      {
+        '$match': {
+          'validVerification': {
+            $in: [null, false]
+          }
+        }
+      }, {
+        '$sample': {
+          'size': 1
+        }
+      }
+    ]).toArray();
+
+    return res[0];
+  }
+
+  static async setValidVerification(userId, valid) {
+    await this.listings.updateOne({ userId }, { validVerification: valid });
   }
 }
 

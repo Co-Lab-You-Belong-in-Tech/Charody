@@ -18,7 +18,6 @@ import ForgotPassword from './components/ForgotPassword/forgotPassword';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 import OfficialRoute from './components/PrivateRoute/OfficialRoute.js';
 import { AuthProvider } from './context/AuthContext.js';
-import VerifyID from './components/ProfileCreation/VerifyID/verifyID';
 import VerifyEmail from './components/VerifyEmail/VerifyEmail.js';
 
 function App() {
