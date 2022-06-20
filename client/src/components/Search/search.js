@@ -53,9 +53,12 @@ export default function Search() {
     searchCriteria.count = 10000;
     searchListings(searchCriteria)
       .then(res => {
-        if (res.results) {
-          console.log(res.results)
-          const csv = parser.parse(res.results)
+        if (res.results[0]) {
+          const results = res.results.map(entry => {
+            delete entry._id
+            return entry
+          })
+          const csv = parser.parse(results)
           const blob = new Blob([csv], { type: 'text/csv' })
           const url = URL.createObjectURL(blob)
           window.open(url)
@@ -67,7 +70,7 @@ export default function Search() {
 
   const cards = data.map(obj => {
     return (
-      <div className='userCard' key={`${obj.firstName}${obj.phone}${obj.email}`}>
+      <div className='userCard' key={obj._id}>
         <span><b>First Name:</b> {obj.firstName}</span>
         <span><b>Phone:</b> {obj.phone}</span>
         <span><b>Email:</b> {obj.email}</span>
