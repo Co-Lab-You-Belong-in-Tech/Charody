@@ -85,10 +85,10 @@ export default function Search() {
           <div>
             <label>Miles from Location</label>
             <div>
-              <input placeholder='Miles' onChange={e => {
+              <input type='number' placeholder='Miles' onChange={e => {
                 setMiles(e.target.value)
               }} />
-              <input placeholder='from Zip Code' onChange={e => {
+              <input type='number' placeholder='from Zip Code' onChange={e => {
                 setFromZip(e.target.value)
               }} />
             </div>

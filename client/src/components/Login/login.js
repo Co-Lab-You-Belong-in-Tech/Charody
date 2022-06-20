@@ -42,8 +42,8 @@ export default function Login(){
                 <img src={loginImg}></img>
             </div>
             <form onSubmit={handleSubmit}>
-                <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
-                <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
+                <input type='email' required placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
+                <input type='password' required placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
                 <button type='submit' className='buttonColored full'>Login</button>
                 {message && <span>{message}</span>}
                 <div className='loginOptions'>
