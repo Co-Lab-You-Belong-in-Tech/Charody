@@ -34,7 +34,7 @@ export default function Navbar() {
                     </Fragment>
                 ) : (
                     <Fragment>
-                        <button className='buttonText' onClick={auth.signOut}>Logout</button>
+                        <button className='buttonText' onClick={() => auth.signOut(true)}>Logout</button>
                     </Fragment>
                 ) }
                 

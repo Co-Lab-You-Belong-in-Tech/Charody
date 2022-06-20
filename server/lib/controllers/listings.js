@@ -16,7 +16,7 @@ const searchListingsBodySchema = {
     allowsCats: { type: 'boolean' },
     allowsDogs: { type: 'boolean' },
     noStairs: { type: 'boolean' },
-    count: { type: 'integer', minimum: 1, maximum: 50 },
+    count: { type: 'integer', minimum: 1 },
     page: { type: 'integer', minimum: 1 }
   },
   required: ['zipcode', 'radius'],

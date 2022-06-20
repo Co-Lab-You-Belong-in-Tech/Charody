@@ -25,6 +25,7 @@ app.use(
 app.use('/api/v1/users', require('./controllers/users'));
 app.use('/api/v1/listings', authenticate, require('./controllers/listings'));
 app.use('/api/v1/files', authenticate, require('./controllers/files'));
+app.use('/api/v1/idReview', authenticate, require('./controllers/idReview'));
 
 // Error handling & 404 middleware for when
 // a request doesn't match any app routes

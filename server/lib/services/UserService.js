@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const UserDAO = require('../DAOs/UserDAO');
 const { nanoid } = require('nanoid');
 const { sendVerificationEmail } = require('./EmailService.js');
+const isWhiteListedEmail = require('../utils/isWhiteListedEmail.js');
 
 async function create({ email, password, isOfficial }) {
   const existingUsername = await UserDAO.getUser(email);
@@ -16,8 +17,11 @@ async function create({ email, password, isOfficial }) {
 
   const userInfo = { email, passwordHash };
   if(isOfficial) {
+    if(!isWhiteListedEmail(email)) throw new Error('This email is not allowed to sign up as an official.');
     userInfo.verificationCode = nanoid();
     sendVerificationEmail(email, userInfo.verificationCode);
+  } else {
+    userInfo.isHomeowner = true;
   }
 
   const user = await UserDAO.addUser(userInfo);
@@ -30,7 +34,7 @@ async function signIn({ email, password = '' }) {
     const user = await UserDAO.getUser(email);
 
     if (!user) throw new Error('Invalid credentials');
-    if (user.verificationCode) throw new Error('Account not verified');
+    if (user.verificationCode) throw new Error('Account not verified. Please check your email.');
     if (!bcrypt.compareSync(password, user.passwordHash))
       throw new Error('Invalid credentials');
 

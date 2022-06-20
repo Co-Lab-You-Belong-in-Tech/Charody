@@ -49,6 +49,7 @@ export const searchListings = async (searchCriteria, signal) => {
     body: JSON.stringify(searchCriteria)
   });
   const listings = await res.json();
+  if(!listings.results) console.log(listings)
   return Array.isArray(listings.results) ? listings : {
     results: [],
     totalMatched: 0
