@@ -50,8 +50,8 @@ export default function SignUp(){
                     <NavLink className='navLink' activeStyle={activeStyle} to={`/signUp/official`}>Official</NavLink>
                 </div>
                 <form className='homeownerForm' onSubmit={handleSubmit}>
-                    <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)} />
-                    <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)} />
+                    <input type='email' required placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)} />
+                    <input type='password' required placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)} />
                     <button type='submit' className='buttonColored full'>Create an Account</button>
                     {message && <span>{message}</span>}
                 </form>
