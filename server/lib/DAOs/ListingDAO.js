@@ -114,11 +114,6 @@ class Listing {
 
     const results = await this.listings.aggregate([
       {
-        $project: {
-          _id: 0
-        }
-      },
-      {
         $match: query
       }, {
         $skip: (page - 1) * count
