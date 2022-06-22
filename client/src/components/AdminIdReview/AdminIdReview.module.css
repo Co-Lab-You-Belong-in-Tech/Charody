@@ -1,0 +1,30 @@
+.idReview > img {
+  width: 300px;
+  margin: 20px;
+}
+
+.idReview button {
+  margin: 5px;
+}
+
+.imageContainer {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+.imageContainer > img{
+  width: 300px;
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

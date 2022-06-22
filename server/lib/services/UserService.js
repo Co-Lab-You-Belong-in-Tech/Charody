@@ -4,6 +4,7 @@ const UserDAO = require('../DAOs/UserDAO');
 const { nanoid } = require('nanoid');
 const { sendVerificationEmail } = require('./EmailService.js');
 const isWhiteListedEmail = require('../utils/isWhiteListedEmail.js');
+const isAdminEmail = require('../utils/isAdminEmail.js');
 
 async function create({ email, password, isOfficial }) {
   const existingUsername = await UserDAO.getUser(email);
@@ -40,6 +41,7 @@ async function signIn({ email, password = '' }) {
 
     delete user.passwordHash;
     delete user.verificationCode;
+    user.isAdmin = isAdminEmail(user.email);
     const token = jwt.sign({ ...user }, process.env.JWT_SECRET, {
       expiresIn: '1 day',
     }); // TODO: change to something more reasonable
