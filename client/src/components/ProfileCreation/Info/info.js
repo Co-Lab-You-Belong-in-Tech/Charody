@@ -16,13 +16,13 @@ export default function Info(props){
             <div className='usernameFields'>
                 <div className='formField'>
                     <label for='firstNameInput'>First Name</label>
-                    <input id='firstNameInput' type='text' placeholder='First Name' pattern="[A-Za-z]"required value={data.firstName} onChange={e => {
+                    <input id='firstNameInput' type='text' placeholder='First Name' pattern='[A-Za-z]+' required value={data.firstName} onChange={e => {
                         dispatch(signup({ firstName: e.target.value }))
                     }}></input>
                 </div>
                 <div className='formField'>
                     <label for='lastNameInput'>Last Name</label>
-                    <input id='lastNameInput'type='text' placeholder='Last Name' pattern="[A-Za-z]" required value={data.lastName} onChange={e => {
+                    <input id='lastNameInput'type='text' placeholder='Last Name' pattern='[A-Za-z]+' required value={data.lastName} onChange={e => {
                         dispatch(signup({ lastName: e.target.value }))
                     }}></input>
                 </div>
