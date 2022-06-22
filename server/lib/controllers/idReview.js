@@ -6,6 +6,8 @@ const isAdminEmail = require('../utils/isAdminEmail.js');
 //TODO add switch for production and staging URLs
 const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7890/api/v1' : 'https://charody-staging.herokuapp.com/api/v1';
 
+// TODO: remove
+// eslint-disable-next-line no-unused-vars 
 const generateReviewPage = (userInfo, idUrl, selfieUrl) => {
   return `
     <html>
@@ -62,17 +64,16 @@ module.exports = Router()
   .get('/', async (req, res, next) => {
     try {
       if(!isAdminEmail(req.user.email)) return res.sendStatus(401);
-      // get random unapproved profile
       const randomUser = await ListingDAO.getRandomUnverifiedUser();
       const { firstName, lastName, userId } = randomUser;
       const userInfo = {
         userId,
         firstName,
-        lastName
+        lastName,
+        idUrl: `${apiUrl}/files/id/${userId}`,
+        selfieUrl: `${apiUrl}/files/selfie/${userId}`
       };
-      const idUrl = `${apiUrl}/files/id/${userId}`;
-      const selfieUrl = `${apiUrl}/files/selfie/${userId}`;
-      res.send(generateReviewPage(userInfo, idUrl, selfieUrl));
+      res.json(userInfo);
     } catch (error) {
       next(error);
     }

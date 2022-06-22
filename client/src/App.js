@@ -19,6 +19,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 import OfficialRoute from './components/PrivateRoute/OfficialRoute.js';
 import { AuthProvider } from './context/AuthContext.js';
 import VerifyEmail from './components/VerifyEmail/VerifyEmail.js';
+import AdminIdReview from './components/AdminIdReview/AdminIdReview.js';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           {/* <Route path='/test' component={ProfileCreation}></Route> */}
           <Route path='/forgotPassword' component={ForgotPassword}/>
           <Route path='/verify' component={VerifyEmail}/>
+          <Route path='/admin' component={AdminIdReview} />
         </div>
       </AuthProvider>
     </Router>
