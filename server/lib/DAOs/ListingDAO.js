@@ -160,7 +160,11 @@ class Listing {
   }
 
   static async setValidVerification(userId, valid) {
-    await this.listings.updateOne({ userId }, { validVerification: valid });
+    await this.listings.updateOne({ userId }, { 
+      $set: {
+        validVerification: valid
+      }
+    });
   }
 }
 
