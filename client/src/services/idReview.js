@@ -11,8 +11,8 @@ export const getIdReview = async () => {
   return await res.json()
 }
 
-export const postReview = (approved, userId) => {
-  fetch(`${apiUrl}/idReview/${userId}`, {
+export const postReview = async (approved, userId) => {
+  return await fetch(`${apiUrl}/idReview/${userId}`, {
     credentials: 'include',
     method: 'POST',
     headers: {
