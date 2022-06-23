@@ -4,7 +4,7 @@ const ListingDAO = require('../DAOs/ListingDAO');
 const isAdminEmail = require('../utils/isAdminEmail.js');
 
 //TODO add switch for production and staging URLs
-const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7890/api/v1' : 'https://charody-staging.herokuapp.com/api/v1';
+const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7890/api/v1' : 'https://charody.herokuapp.com/api/v1';
 
 // TODO: remove
 // eslint-disable-next-line no-unused-vars 
