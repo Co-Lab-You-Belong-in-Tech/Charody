@@ -1,7 +1,8 @@
+import { nanoid } from '@reduxjs/toolkit';
 import { apiUrl } from '../utils/apiUrl.js';
 
 export const getIdReview = async () => {
-  const res = await fetch(`${apiUrl}/idReview/`, {
+  const res = await fetch(`${apiUrl}/idReview/?fake=${nanoid()}`, {
     credentials: 'include',
     headers: {
       'Accept': 'application/json',

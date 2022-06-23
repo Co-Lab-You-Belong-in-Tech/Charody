@@ -13,7 +13,7 @@ export default function AdminIdReview() {
   const [idData, setIdData] = useState({})
 
   const loadData = useCallback(() => {
-    if(!loading && !loaded) {
+    if(!loading) {
       setLoading(true)
       getIdReview()
       .then(res => {
@@ -23,7 +23,7 @@ export default function AdminIdReview() {
       })
       .catch(e => console.log(e))
     }
-  }, [loading, loaded])
+  }, [loading])
 
   const handleApprove = () => {
     postReview(true, idData.userId)
@@ -42,10 +42,12 @@ export default function AdminIdReview() {
       if(!user.isAdmin) {
         history.push("/search")
       } else {
-        loadData()
+        if(!loaded) {
+          loadData()
+        }
       }
     }
-  }, [user, history, loading, loaded])
+  }, [user, history, loading, loaded, loadData])
 
   if(!loaded || !idData?.idUrl) {
     return <h3>Loading...</h3>
