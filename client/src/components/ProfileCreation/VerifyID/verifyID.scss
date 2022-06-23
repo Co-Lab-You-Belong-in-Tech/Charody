@@ -9,15 +9,6 @@
             width: 72px;
             height: 72px;
         }
-<<<<<<< HEAD
-    }
-    .fileList{
-        &>*{
-            display: flex;
-            justify-content: space-between;
-        }
-        svg{
-=======
         span{ color: rgba(38, 180, 249, 1); }
     }
     .reviewFile{
@@ -31,7 +22,6 @@
         display: flex;
         justify-content: space-between;
         &>svg{
->>>>>>> 2e823fd91035769830b4ec001bdc8308d8818481
             max-width: 1rem;
             &:hover{ cursor: pointer; }
         }

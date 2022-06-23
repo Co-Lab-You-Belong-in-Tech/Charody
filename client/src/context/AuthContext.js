@@ -47,11 +47,7 @@ const AuthProvider = ({ children }) => {
   const value = useMemo(
     () => ({ user, setUser, signUp, signOut }),
     [user, setUser, signUp, signOut],
-<<<<<<< HEAD
-  );
-=======
   )
->>>>>>> 2e823fd91035769830b4ec001bdc8308d8818481
 
   if (loading) {
     // This component will lose its state on page refreshes and manually entered URLs.
@@ -61,25 +57,6 @@ const AuthProvider = ({ children }) => {
       <div className="authcontextloading">
         <h2>Loading...</h2>
       </div>
-<<<<<<< HEAD
-    );
-  } else {
-    return (
-      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-    );
-  }
-};
-
-const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('Auth context was undefined, make sure it was called from a child component of AuthProvider');
-  }
-  return context;
-};
-
-export { AuthProvider, useAuth };
-=======
     )
   } else {
     return (
@@ -97,4 +74,3 @@ const useAuth = () => {
 }
 
 export { AuthProvider, useAuth }
->>>>>>> 2e823fd91035769830b4ec001bdc8308d8818481
