@@ -7,6 +7,7 @@ import './login.css'
 export default function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [message, setMesssage] = useState('')
     const { setUser } = useAuth()
     const history = useHistory()
     const params = new URLSearchParams(useLocation().search)
@@ -14,7 +15,7 @@ export default function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault()
         const res = await logIn(email, password)
-        if(res.message === 'Signed in successfully!') {
+        if(res?.message === 'Signed in successfully!') {
             const user = await getUser()
             setUser(user)
             if(params.get("redirect") === "true") {
@@ -30,6 +31,8 @@ export default function Login(){
                     }
                 }
             }
+        } else {
+            setMesssage(res?.message)
         }
     }
     return(
@@ -39,9 +42,10 @@ export default function Login(){
                 <img src={loginImg}></img>
             </div>
             <form onSubmit={handleSubmit}>
-                <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
-                <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
+                <input type='email' required placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
+                <input type='password' required placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
                 <button type='submit' className='buttonColored full'>Login</button>
+                {message && <span>{message}</span>}
                 <div className='loginOptions'>
                     <Link to='/forgotPassword'>Forgot Password?</Link>
                     <div>

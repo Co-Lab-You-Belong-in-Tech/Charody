@@ -1,4 +1,4 @@
-import { NavLink, Link, useParams, useHistory } from 'react-router-dom'
+import { NavLink, Link, useParams } from 'react-router-dom'
 import './signUp.css'
 import '../components.css'
 
@@ -12,12 +12,22 @@ export default function SignUp(){
     const { type } = useParams()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [message, setMesssage] = useState("")
     const { signUp } = useAuth()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const isOfficial = type === 'official'
-        signUp(email, password, isOfficial)
+        try {
+            const res = await signUp(email, password, isOfficial)
+            if(res?.message) {
+                setMesssage(res.message)
+            } else if (isOfficial) {
+                setMesssage("Please check your inbox to verify your email address.")
+            }
+        } catch (e) {
+            setMesssage("An error occurred.")
+        }
     }
 
     return(
@@ -40,9 +50,10 @@ export default function SignUp(){
                     <NavLink className='navLink' activeStyle={activeStyle} to={`/signUp/official`}>Official</NavLink>
                 </div>
                 <form className='homeownerForm' onSubmit={handleSubmit}>
-                    <input placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)}></input>
-                    <input placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)}></input>
+                    <input type='email' required placeholder='Email' value={email} onChange={({ target }) => setEmail(target.value)} />
+                    <input type='password' required placeholder='Password' value={password} onChange={({ target }) => setPassword(target.value)} />
                     <button type='submit' className='buttonColored full'>Create an Account</button>
+                    {message && <span>{message}</span>}
                 </form>
                 <div className='loginOptions'>
                     <Link to='/forgotPassword'>Forgot Password?</Link>

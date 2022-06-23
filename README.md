@@ -24,11 +24,10 @@ There are homeowners who are willing to provide temporary housing to families wh
 ## Features
 By creating a way for Disaster relief workers to see homeowners who’ve expressed their willingness to temporary house evacuees due to Wildfires, more unhoused families will be placed in safe and secure temporary housing. When Disaster relief officials can connect with homeowners who want to host families in need, more evacuated families affected by wildfires will get the shelter they need.
  
-* Provide more temporary housing options for CA disaster relief workers to place unhoused victims of CA wildfire
-* Allow CA wildfire officials to view a list of temporary housing profiles
-* Increase the number of evacuated families placed in safe and secure temporary housing
-* Provide an easy way in which CA homeowners can post availability and willingness to provide temporary housing
-* Increase the inventory of temporary housing for evacuees during CA Wildfires
+* A Homeowner profile allows users to input their contact information, location, and specifics of what they can accommodate as hosts.
+* ID and photo uploads in the homeowner profile to verify that the face and information match
+* A page that organizes hos profile information into a list that can be filtered based on accommodation specifics and location
+* Email verification for case manager partners to maintain exclusive access to listings page information
 
 ## Technologies
 * React.js

@@ -1,53 +1,57 @@
-import { createContext, useContext, useMemo, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useMemo, useState, useEffect, useCallback } from 'react'
 import { getUser, logIn, logOut, signUp as postSignUp } from '../services/users.js'
 import { useHistory } from 'react-router-dom'
 
-const AuthContext = createContext();
+const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({});
-  const [loading, setLoading] = useState(true);
-  const history = useHistory();
+  const [user, setUser] = useState({})
+  const [loading, setLoading] = useState(true)
+  const history = useHistory()
 
   useEffect(() => {
     const getCurrentUser = async () => {
-      const res = await getUser();
-      if(res?._id) {
-        setUser(res);
-        if(!res.isOfficial && !res.hasListing) {
+      const res = await getUser()
+      if (res?._id) {
+        setUser(res)
+        if (!res.isOfficial && !res.hasListing) {
           history.push('/profileCreation/info')
         }
       }
-      setLoading(false);
-    };
-    getCurrentUser();
-  }, []);
+      setLoading(false)
+    }
+    getCurrentUser()
+  }, [history])
 
   const signUp = useCallback(async (email, password, isOfficial) => {
     const res = await postSignUp(email, password, isOfficial)
-    console.log('submitted')
     if (res?.email === email) { // TODO: Make the success response better
-        await logIn(email, password);
-        const loggedInUser = await getUser();
-        setUser(loggedInUser);
-        if(isOfficial) {
-            history.push('/search')
-        } else {
-            history.push('/profileCreation/info')
-        }
+      await logIn(email, password)
+      const loggedInUser = await getUser()
+      setUser(loggedInUser)
+      if (!isOfficial) {
+        history.push('/profileCreation/info')
+      }
+    } else {
+      return res
     }
   }, [history])
 
-  const signOut = useCallback(async () => {
-    await logOut();
+  const signOut = useCallback(async (redirect) => {
+    await logOut()
     setUser({})
-    history.push('/')
+    if(redirect)
+      history.push("/")
   }, [history])
 
   const value = useMemo(
     () => ({ user, setUser, signUp, signOut }),
     [user, setUser, signUp, signOut],
+<<<<<<< HEAD
   );
+=======
+  )
+>>>>>>> 2e823fd91035769830b4ec001bdc8308d8818481
 
   if (loading) {
     // This component will lose its state on page refreshes and manually entered URLs.
@@ -57,6 +61,7 @@ const AuthProvider = ({ children }) => {
       <div className="authcontextloading">
         <h2>Loading...</h2>
       </div>
+<<<<<<< HEAD
     );
   } else {
     return (
@@ -74,3 +79,22 @@ const useAuth = () => {
 };
 
 export { AuthProvider, useAuth };
+=======
+    )
+  } else {
+    return (
+      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+    )
+  }
+}
+
+const useAuth = () => {
+  const context = useContext(AuthContext)
+  if (context === undefined) {
+    throw new Error('Auth context was undefined, make sure it was called from a child component of AuthProvider')
+  }
+  return context
+}
+
+export { AuthProvider, useAuth }
+>>>>>>> 2e823fd91035769830b4ec001bdc8308d8818481

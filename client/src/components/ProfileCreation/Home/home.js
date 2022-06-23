@@ -65,7 +65,7 @@ export default function Home(props){
             </div>
             <label>
                 <p>How many days can you host?<br/>Minimum 3 days, maximum 30 days</p>
-                <input type='number' placeholder='number' className='daysInput' value={data.days} onChange={e => dispatch(signup({ days: e.target.value }))}></input>
+                <input type='number' placeholder='number' min='3' max='30' required className='daysInput' value={data.days} onChange={e => dispatch(signup({ days: e.target.value }))}></input>
             </label>
             <button type='submit' className='next'>Next</button>
         </form>

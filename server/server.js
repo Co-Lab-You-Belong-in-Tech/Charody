@@ -1,7 +1,7 @@
 const app  = require('./lib/app');
 const { MongoClient } = require('mongodb');
-const User = require('./lib/models/User');
-const Listing = require('./lib/models/Listing');
+const UserDAO = require('./lib/DAOs/UserDAO');
+const ListingDAO = require('./lib/DAOs/ListingDAO');
 
 const PORT = process.env.PORT || 7890;
 
@@ -18,8 +18,8 @@ MongoClient.connect(
     process.exit(1);
   })
   .then(async client => {
-    await User.injectDB(client);
-    await Listing.injectDB(client);
+    await UserDAO.injectDB(client);
+    await ListingDAO.injectDB(client);
     app.listen(PORT, () => {
       console.log(`🚀  Server started on port: ${PORT}`);
     });

@@ -14,7 +14,7 @@ export default function ForgotPassword(){
             <p>Please enter the email address associated with your account for reset information. </p>
             <div>
                 <label>Email Address</label>
-                <input placeholder='Email' onChange={e => {
+                <input type='email' required placeholder='Email' onChange={e => {
                     setEmail(e.target.value)
                 }}></input>
             </div>

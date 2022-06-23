@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const authenticate = require('../middleware/authenticate');
-const User = require('../models/User');
+const UserDAO = require('../DAOs/UserDAO');
 const UserService = require('../services/UserService');
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
@@ -51,19 +51,23 @@ module.exports = Router()
   })
 
   .delete('/', authenticate, async (req, res) => {
-    await User.deleteUser(req.user.email);
+    await UserDAO.deleteUser(req.user.email);
     res.json({
       success: true,
       message: `Deleted user with email of ${req.user.email}`,
     });
   })
 
-  .get('/verify', async (req, res) => {
-    const { email, code } = req.query;
-    const valid = await User.verifyEmail(email, code);
-    if(valid) {
-      res.redirect('/login');
-    } else {
-      res.status(401).json({ message: 'invalid code' });
+  .get('/verify', async (req, res, next) => {
+    try {
+      const { email, code } = req.query;
+      const valid = await UserDAO.verifyEmail(email, code);
+      if(valid) {
+        res.json({ message: 'account verified' });
+      } else {
+        res.status(401).json({ message: 'invalid code' });
+      }
+    } catch (e) {
+      next(e);
     }
   });
